@@ -10,7 +10,7 @@
 | Brief and assignment reference | `<paths or IDs>` |
 | Phase | `<DESIGN SPECIFICATION / IMPLEMENTATION; do not conflate document and runtime checks>` |
 | Candidate | `<commit, build ID or immutable artifact>` |
-| Approved PRD/ACs and contracts | `<paths, versions, IDs>` |
+| Approved Planner Output/ACs and contracts | `<paths, versions, IDs>` |
 | Affected apps/files/functions | `<specific scope>` |
 | Allowed environment/data and prohibited actions | `<explicit limits>` |
 | Test-writing area and output path | `<paths from brief>` |
@@ -20,7 +20,7 @@
 
 | Source | Relevant section/rule | Why applicable |
 | --- | --- | --- |
-| `<frontend-guide, backend-guide, syntax, PRD, design or contract path>` | `<heading/ID>` | `<changed behavior or file>` |
+| `<frontend-guide, backend-guide, syntax, Planner Output, design or contract path>` | `<heading/ID>` | `<changed behavior or file>` |
 
 ## Imported QA methods, if used
 

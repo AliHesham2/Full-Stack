@@ -56,8 +56,8 @@ src/
   test-utils/             # only the test runner's setup file
     setup.ts
 tests/                    # unit + component tests, one folder per tester (04-quality/testing)
-  kilo/                   #   mirrors src/: kilo/features/dashboard/project-card.test.tsx
-  opencode/               #   the same paths, an independent suite
+  tester-a/               #   mirrors src/: tester-a/features/dashboard/project-card.test.tsx
+  tester-b/               #   only if a second Tester is actually assigned
 public/
   favicon.ico
   images/
@@ -217,3 +217,5 @@ Root-level files are project infrastructure, not application code:
 - `package.json` — Dependencies and scripts. Keep scripts minimal; complex build logic belongs in `next.config.ts`.
 
 Root config files should not contain application logic. They configure tools, not behavior.
+
+Test directory names in this example are placeholders. Roster and the authorized brief select actual Tester operators, count and isolated write scopes; they do not require a second operator. Follow the shared delivery cycle for Orchestrator's personal verification of corrections, without automatic Tester redispatch.

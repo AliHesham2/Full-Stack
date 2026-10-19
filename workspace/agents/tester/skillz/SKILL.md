@@ -4,7 +4,7 @@ Use this skill after `../prompt.md` on every assigned Tester task. This is a tas
 
 ## 1. Establish the test target
 
-Record the brief ID, assigned operator, candidate revision/build, affected apps, changed files/functions, approved PRD and acceptance-criteria IDs, design/API contracts, allowed environment and data, permitted test-writing folder, report destination and output paths. Inspect adjacent callers, shared code, existing tests and recent defect history. Name the DESIGN SPECIFICATION or IMPLEMENTATION phase. If the candidate changes during the assigned initial phase, explicitly reset stale results; never combine revisions into one PASS. Later corrections follow the [delivery cycle](../../orchestrator/skillz/delivery-cycle.md): Orchestrator verifies them personally, without an automatic Tester return.
+Record the brief ID, assigned operator, candidate revision/build, affected apps, changed files/functions, approved Planner Output and acceptance-criteria IDs, design/API contracts, allowed environment and data, permitted test-writing folder, report destination and output paths. Inspect adjacent callers, shared code, existing tests and recent defect history. Name the DESIGN SPECIFICATION or IMPLEMENTATION phase. If the candidate changes during the assigned initial phase, explicitly reset stale results; never combine revisions into one PASS. Later corrections follow the [delivery cycle](../../orchestrator/skillz/delivery-cycle.md): Orchestrator verifies them personally, without an automatic Tester return.
 
 If an essential input is absent, mark that work `BLOCKED`, explain the missing input to the Orchestrator and continue independent checks that remain valid. A blank role assignment is not permission to select an operator.
 

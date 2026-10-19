@@ -36,12 +36,8 @@ src/
     └── jobs/                    # worker entrypoints (if background jobs exist)
 ```
 
-**The tests themselves live outside `src/`, one folder per tester:** `backend/tests/kilo/` and
-`backend/tests/opencode/`. Each mirrors the modules and endpoints it proves
-(`tests/kilo/modules/orders/orders.use-cases.test.ts`), and every test's name starts with its
-acceptance check (`AC-3: …`). Two independent suites for the same code; nobody else writes in a
-tester's folder, and each tester keeps its own helpers (fixtures, factories) inside it: the suites
-share nothing (frontend-guide/04-quality/testing.md § Test Organization has the same rule).
+**Tests live outside `src/`, one authorized folder per assigned Tester:** `backend/tests/<assigned-tester>/`. Roster and the brief supply actual operator names/count, not fixed client defaults. Each folder mirrors the modules/endpoints it proves, such as `tests/<assigned-tester>/modules/orders/orders.use-cases.test.ts`; test names start with their acceptance ID (`AC-3: ...`). Testers own their tests/helpers/fixtures, Implementer runs them without edits, and Orchestrator personally verifies corrections under the shared delivery cycle. Multiple independently assigned suites remain separately owned; do not fabricate a second Tester or automatic retest round. Frontend testing § Test Organization follows the same ownership.
+
 
 Rules encoded here:
 

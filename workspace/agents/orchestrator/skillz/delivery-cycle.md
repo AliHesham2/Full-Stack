@@ -1,6 +1,6 @@
 # Delivery cycle — planning, design gate, implementation gate
 
-This is the shared cycle for the reusable role packages. The owner approved this sequence: Planner supplies software construction work; Designer supplies the detailed design work for Implementer; Tester reviews each phase once; Orchestrator reviews every Tester result and personally verifies subsequent corrections. This procedure does not activate roles, authorize dispatch or migrate root legacy instructions. Read each role's prompt, Roster and actual brief before acting.
+This is the shared cycle for the reusable role packages. The owner approved this sequence: Planner supplies software construction work; Designer supplies the detailed design work for Implementer; Tester reviews each phase once; Orchestrator reviews every Tester result and personally verifies subsequent corrections. This procedure does not appoint operators, activate blank assignments or authorize dispatch. Read each role's prompt, Roster and actual brief before acting.
 
 ```mermaid
 flowchart TD

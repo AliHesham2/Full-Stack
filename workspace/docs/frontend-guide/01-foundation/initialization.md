@@ -40,11 +40,8 @@ These are not suggestions. Use them unless the project brief explicitly override
   them. *(Verified in a real setup, 2026-09-23.)*
 - From the project root, non-interactive:
   `npx create-next-app@latest frontend --ts --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm --yes --disable-git`.
-  The app lives in `frontend/` (CLAUDE.md → the project's layout)
-- `create-next-app` writes `frontend/AGENTS.md` and `frontend/CLAUDE.md`: Next.js's own agent note,
-  pointing to the installed version's docs in `node_modules/next/dist/docs/`, and `next dev`
-  re-adds it. **Keep them and commit them.** Those docs are the source for Next.js questions
-  (there is no Next.js skill in `workspace/docs/syntax/`)
+  The app lives in `frontend/` (this guide's README and project-structure define its app boundary)
+- If scaffolding emits client-entry notes inside the app, inspect their scope before using them. They do not appoint operators or replace the root Roster/role startup route. Tool-generated or installed framework notes do not override Implementer's exclusive local `workspace/docs/syntax/` authority. A required unsupported framework API is a source gap to report; source updates/research need separate authority. This does not require recreating deleted project-level client instructions.
 - `.gitignore` verified (node_modules, .next, .env*.local, coverage, test-results)
 - Single `.env.example` file documenting required env vars (even if empty)
 - `.vscode/settings.json` with recommended extensions and format-on-save
@@ -186,16 +183,13 @@ export default defineConfig([
 `scripts/check-kit.sh` is the kit-purity script in [portability](../02-ui/portability.md). On
 Windows it runs through Git Bash.
 
-**Test-discovery gate:** --passWithNoTests is temporary for untested bootstrap only.
-Keep it while the initial setup steps are built. After the first test round has produced
-discovered and executed tests in both tests/kilo/ and tests/opencode/, Claude routes removal
-through a CHANGE REQUEST on setup: Anti2.0 updates the PRD version, Change Log and ROADMAP;
-Claude checks them by hand; the implementer changes package.json to vitest run.
-Claude never edits package.json. Both testers then rerun all suites on the changed revision.
-Before setup is marked tested, Claude verifies nonempty discovery/execution in both folders,
-the strict script, and a named passing result for every automatable AC. Missing, skipped or
-UNVERIFIED automatable checks block readiness. Manual ACs may remain explicitly UNVERIFIED
-at ready-for-user-check, but block final done until the user's check passes.
+**Test-discovery gate:** `--passWithNoTests` is temporary for untested bootstrap only.
+A zero-test bootstrap check verifies tooling, not product behavior. The Roster/brief identifies the actual Tester operator(s) and their permitted test folders; no fixed clients or mandatory pair is implied. After the assigned initial implementation test phase produces nonempty discovered/executed tests, Orchestrator reviews every result and the required AC coverage.
+
+Orchestrator routes the strict-script change through Planner's approved software TODO/change record and briefs Implementer to remove the temporary flag (`vitest run`). Implementer edits application configuration and reports the new candidate; Orchestrator personally reruns the existing suites and quality gates. Do not automatically send the fix back to Tester. If new/changed tests or unavailable verification are required, keep that scope blocked for the owner's decision under the shared delivery cycle.
+
+Before setup is recommended ready, verify nonempty execution in each assigned test scope, the strict script and actual evidence for applicable automatable ACs. Missing/skipped/unverified required checks block that readiness. Pending owner manual E2E remains explicit and blocks final product acceptance until the actual owner check. A passing script alone is not acceptance.
+
 Run a production build before readiness. In the frontend, the empty kit directory may exist
 during bootstrap, but its directory itself must exist for kit checks.
 
@@ -225,7 +219,7 @@ vitest.config.mts
 
 The dev server starts with `npm run dev`. `npm run test` passes. `npm run lint` (ESLint CLI) passes. `npm run build` produces a `.next/` output without errors.
 
-Report the baseline in your report (Claude records it in `docs/.claude/Decisions-Taken.md`): the production build's initial-route JS size (gzipped) as the starting performance budget ([performance](../04-quality/performance.md)). A deviation from these defaults is never the implementer's own: it is decided in the PRD first (a DEC-n row), and building it without one is BLOCKED ([environments-and-config](../05-delivery/environments-and-config.md) covers env var conventions).
+Report the measured baseline with candidate/environment evidence in your role Output and link it from the task control record: the production build's initial-route JS size (gzipped) as the starting performance budget ([performance](../04-quality/performance.md)). A deviation from these defaults is never the implementer's own: it is recorded as an approved DEC-n in Planner Output and reflected in the software TODO first, and building it without one is BLOCKED ([environments-and-config](../05-delivery/environments-and-config.md) covers env var conventions).
 
 ## Verification
 
@@ -247,7 +241,7 @@ Run this sequence before declaring initialization complete:
 out with `next build --webpack`"*). If you're writing a `next.config.ts` with
 `webpack: {}`, you're fighting the framework. The `--webpack` flag exists for apps with
 custom webpack setups they cannot yet port — treat it as a migration escape hatch with an exit
-date, not a configuration choice, decided in the PRD (Code Structure → Decisions) with its reason. Keep next.config.ts minimal. Justified additions include reactCompiler, images.remotePatterns (prefer it to deprecated images.domains), serverExternalPackages, compiler.removeConsole, cacheComponents and experimental.serverActions.bodySizeLimit. Record the need and verify the installed framework API; this is not a closed allowlist.
+date, not a configuration choice, recorded with its reason and actual approval in Planner Output/DEC-n and the software TODO. Keep next.config.ts minimal. Justified additions include reactCompiler, images.remotePatterns (prefer it to deprecated images.domains), serverExternalPackages, compiler.removeConsole, cacheComponents and experimental.serverActions.bodySizeLimit. Record the need and verify the installed framework API; this is not a closed allowlist.
 
 **Using `middleware.ts` for anything new.** It is deprecated in Next.js 16 — the file and exported function are now `proxy.ts`/`proxy` (Node.js runtime only; keep `middleware.ts` only if you specifically need the Edge runtime). Request-level API proxying is not proxy.ts's job: production traffic routing belongs to infrastructure, and interactive reads and streaming use explicit Route Handlers; RSC reads call server queries directly.
 

@@ -9,7 +9,7 @@
 | Task / assigned operator / round | `<IDs>` |
 | Phase | `<DESIGN SPECIFICATION / IMPLEMENTATION; do not conflate document and runtime checks>` |
 | Candidate revision/build and tested artifact | `<immutable identifier>` |
-| Brief, TODO and PRD/contract versions | `<paths or IDs>` |
+| Brief, TODO and Planner Output/contract versions | `<paths or IDs>` |
 | Environment, fixtures and execution time | `<reproducible details; no secrets>` |
 | Affected apps and checked scope | `<frontend/backend paths and functions>` |
 | Authorized reporting route | `<destination>` |
@@ -18,7 +18,7 @@
 
 | AC ID | Expected behavior/source | Check IDs | Result (`PASS`/`FAIL`/`UNVERIFIED`) | Evidence or reason |
 | --- | --- | --- | --- | --- |
-| `<AC-1>` | `<PRD path:line or contract ID>` | `<T-01>` | `<result>` | `<observed result, evidence path, or gap>` |
+| `<AC-1>` | `<Planner Output path:line or contract ID>` | `<T-01>` | `<result>` | `<observed result, evidence path, or gap>` |
 
 Every approved AC appears exactly once with phase applicability explicit. A document-phase PASS covers specification checks only; runtime-dependent criteria remain UNVERIFIED with the later implementation dependency linked. `BLOCKED` and `NOT RUN` checks make their affected ACs `UNVERIFIED`; `NOT APPLICABLE` needs a reason and cannot erase an AC. An AC that depends on the owner's pending manual E2E remains `UNVERIFIED` here.
 
@@ -68,7 +68,7 @@ Use one entry per confirmed defect or source/design gap; separate hypotheses. Ci
 ### `<F-01: concise title>`
 
 - Kind/severity/user impact: `<confirmed defect or SOURCE/DESIGN GAP; severity and effect>`
-- Source: `<PRD/rule path:line, section and short exact quote>`
+- Source: `<Planner Output/rule path:line, section and short exact quote>`
 - Candidate location: `<file:line, endpoint or screen>`
 - Environment/preconditions and steps: `<reproducible sequence>`
 - Expected / actual: `<observable difference>`

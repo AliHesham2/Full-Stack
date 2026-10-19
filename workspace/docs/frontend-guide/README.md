@@ -77,7 +77,7 @@ Baseline v3.36.0). Other rows are prior snapshots, not a claim that all packages
 the compiler (order-of-magnitude faster `tsc`), and Next.js 16's stated minimum is only TS
 5.1. Treat TS 7 as an opt-in performance upgrade, not the baseline: verify your
 `tsconfig.json`, ESLint/typescript-eslint versions, and editor tooling support it before
-adopting, and decide it in the PRD (Code Structure → Decisions). The rules in
+adopting, and record its actual approval/reason in Planner Output (DEC-n) and the software TODO. The rules in
 [code-quality](./04-quality/code-quality.md) (`strict`, `moduleResolution: "bundler"`) are
 unchanged either way.
 

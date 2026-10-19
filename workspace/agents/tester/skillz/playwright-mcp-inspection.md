@@ -6,7 +6,7 @@
 
 Record the candidate/build, exact project URL, browser and viewport, account/fixture, initial state, action sequence and resulting state. Check that navigation reached the intended route and that required data loaded before making a claim. Use a fresh [accessibility snapshot](https://github.com/microsoft/playwright-mcp#tools) to identify the current control and its accessible name before each interaction; a stale reference after navigation or a modal transition needs a new snapshot. Use screenshots when visual appearance matters, but a screenshot alone cannot establish accessible semantics, keyboard behavior or API correctness. Capture relevant console errors and network request/response evidence when investigating a failure; redact tokens, cookies and personal data.
 
-Separate **observed UI behavior** from an assertion against a PRD acceptance criterion. An exploratory click sequence does not become a maintained regression test, and a single viewport or account does not prove other states. A tool error, redirect, missing element or incomplete load is a coverage gap to investigate, not a PASS. Report the actual steps and artifacts in the [Tester Output](../templates/output.md).
+Separate **observed UI behavior** from an assertion against a Planner Output acceptance criterion. An exploratory click sequence does not become a maintained regression test, and a single viewport or account does not prove other states. A tool error, redirect, missing element or incomplete load is a coverage gap to investigate, not a PASS. Report the actual steps and artifacts in the [Tester Output](../templates/output.md).
 
 ## Session and action boundaries
 

@@ -1,12 +1,12 @@
 # QA project context — template for an actual project
 
-> Use only when the owner or assigned Orchestrator requests a durable project QA context and supplies an approved path. This file is a reusable template, not a claim that the starter template has a live product. Read the Roster, approved PRD, app config and guides first. Mark unknowns `UNKNOWN — owner input needed`; distinguish detected facts, decisions and proposals.
+> Use only when the owner or assigned Orchestrator requests a durable project QA context and supplies an approved path. This file is a reusable template, not a claim that the starter template has a live product. Read the Roster, approved Planner Output, app config and guides first. Mark unknowns `UNKNOWN — owner input needed`; distinguish detected facts, decisions and proposals.
 
 ## Product
 
 - Name/type/purpose: `<approved source or UNKNOWN>`
 - Development, staging and production URLs: `<actual values or NOT CONFIGURED>`
-- Critical user journeys and owner: `<approved PRD IDs or UNKNOWN>`
+- Critical user journeys and owner: `<approved Planner Output IDs or UNKNOWN>`
 
 ## Tech stack
 
@@ -36,7 +36,7 @@
 
 ## Risk areas
 
-| Area / PRD ID | Impact | Likelihood | Evidence and owner |
+| Area / Planner Output ID | Impact | Likelihood | Evidence and owner |
 | --- | --- | --- | --- |
 | `<actual area>` | `<1–5 or UNKNOWN>` | `<1–5 or UNKNOWN>` | `<incident, requirement or decision>` |
 

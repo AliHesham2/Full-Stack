@@ -4,10 +4,7 @@ This file defines how an AI coding agent should consume this guide system.
 
 ## Workflow Overview
 
-In this project, the stages of every task and when it is done are set by your Skill file
-(`docs/.claude/<you>-Skill.md`). The sections below give each stage its knowledge: 1–3 →
-understand and inspect · 4 → not covered · 5 → your criteria · 6 → the work · 7–8 → verify ·
-9 → your report.
+Start from [Roster](../../../rostar/roster.md), your assigned role's prompt and Skill, and the shared [delivery cycle](../../../agents/orchestrator/skillz/delivery-cycle.md). This engineering guide routes technical reading; it does not appoint operators or replace role sequencing, ownership or evidence requirements. The steps below apply to the assigned phase, not permission to perform every role yourself.
 
 ```
 Understand → Inspect → Identify → (not covered → report) → Plan → Implement → Test → Audit → Finish
@@ -26,7 +23,7 @@ Understand → Inspect → Identify → (not covered → report) → Plan → Im
 ### 2. Inspect
 
 - Read the existing project structure (if it exists).
-- Read the decisions already made: the feature's PRD (`plans/<feature>/PRD.md` → Code Structure → New Packages and Decisions) and `docs/.claude/Decisions-Taken.md` (see [delivery-and-observability](../05-delivery/delivery-and-observability.md)).
+- Read the current approved Planner Output/DEC/CHG entries, software TODO, actual design TODO/version and the linked task control record (see [delivery-and-observability](../05-delivery/delivery-and-observability.md)). Use their actual authorized paths; do not require historical planning templates.
 - Identify existing patterns, boundaries, and conventions.
 - Identify which files will be affected.
 
@@ -86,14 +83,11 @@ What kind of work is this?
 
 ### 4. Not Covered → Stop and Report
 
-The same rule as your Skill file, RULES 1:
+Follow the assigned role's source-gap and escalation procedure:
 
-- **Neither this guide nor the Skills cover it** → stop, and report it in the mailbox: what is not
-  covered, where you looked, and the decision that is needed (the PRD writer instead writes it as
-  an Open Question in the PRD). Do not silently invent a requirement. Report the gap; Claude may authorize bounded primary-source research/reproduction and record the resulting technical decision. Evidence can challenge a factual claim without overriding the fixed architecture.
-- **A Skills file disagrees with this guide** → the guide wins: follow it, carry on, and report
-  the conflict so the Skills file gets fixed.
-- **Two files of this guide disagree** → stop and report it, as for a gap.
+- Missing required behavior, technical source, contract or permission blocks the dependent work. Report exact sources, affected items and the needed decision through the assigned Orchestrator; Planner records requirement/decision gaps in its current Output.
+- Bounded primary-source research or source maintenance requires actual authority; it does not automatically change project policy or override Implementer's local syntax restriction. The responsible role records source-backed proposals, and the actual owner approves decisions within its authority.
+- Engineering constraints and role procedures govern different concerns. If they conflict materially, cite both and report it rather than silently overriding either. Continue only independent work whose prerequisites remain valid.
 
 ### 5. Plan
 
@@ -120,7 +114,7 @@ Before writing code, determine:
 ### 7. Test
 
 - The unit and component tests are written by the testers, each in its own folder
-  (`tests/kilo/`, `tests/opencode/`; see [testing.md](../04-quality/testing.md)).
+  (`tests/<assigned-tester>/`, with identities/write boundaries from Roster and the brief; see [testing.md](../04-quality/testing.md)).
 - The implementer runs every suite with `npm run check` and verifies all tests pass.
 - A tester's test fails because of your change → fix the code. The test itself looks wrong →
   report BLOCKED. Never edit or delete a tester's test.
@@ -145,11 +139,9 @@ After implementation, verify:
 
 ### 9. Finish
 
-- Report as your Skill file's REPORT rule says: what changed, what you verified, the checks, what
-  remains, and every decision you made with its source.
-- Never write a decision file yourself: Claude records what must be kept in
-  `docs/.claude/Decisions-Taken.md`. A new architectural boundary is decided in the PRD, never
-  during the build.
+- Deliver the assigned role's Output: actual changes, candidate identity, sources, checks and limitations. Proposed work is not execution evidence.
+- Report plan/contract/design changes through Orchestrator to their owning role. Planner maintains canonical requirement/DEC/CHG records; Orchestrator maintains the single linked coordination control record. Workers do not edit another role's decision/state artifacts.
+- After Tester's initial report, Orchestrator reviews every result and personally verifies Designer/Implementer corrections under the shared cycle; do not automatically return fixes to Tester.
 
 ## Phase Lifecycle
 
@@ -180,7 +172,4 @@ Phase 3 ...
 5. **Never assume the frontend enforces security.** Security boundaries are backend-enforced; frontend contributes defense in depth.
 6. **Never treat accessibility as a cleanup step.** It is part of every implementation decision.
 7. **Never optimize prematurely.** Establish performance foundations, then measure before optimizing.
-8. **When in doubt, never assume.** A choice that neither the PRD, the guides nor the Skills
-   decide → handle it as your Skill file's RULES 1 says (a report in the mailbox; for the PRD
-   writer, an Open Question in the PRD). Where they allow several options, choose the simplest
-   reversible one.
+8. **When in doubt, never assume.** A missing required decision/source blocks affected work and returns through Orchestrator to the actual owner. Within an already approved range, use the assigned role's rules; do not invent contract, schema, security or product behavior.

@@ -9,7 +9,7 @@ This is a self-contained textual implementation handoff. Include complete approv
 | Field | Value |
 | --- | --- |
 | Task / operator / candidate | `<IDs and immutable version/artifact>` |
-| Brief, TODO and approved requirements version | `<current Planner Output and role TODO paths/IDs; no old PRD required>` |
+| Brief, TODO and approved requirements version | `<current Planner Output and role TODO paths/IDs; no historical document required>` |
 | Design-guide and frontend-guide sections used | `<paths/headings>` |
 | Detailed design TODO / software TODO versions and design gate evidence | `<actual paths/versions; Tester report and Orchestrator disposition/correction checks, or NOT RUN>` |
 | Artifact locations and actual viewer/tool | `<paths/links, or TEXT SPEC ONLY>` |
@@ -37,13 +37,13 @@ This is a self-contained textual implementation handoff. Include complete approv
 
 | Component or `DS-n` | Existing kit reuse or justified addition | Anatomy/variants/states and content constraints | Semantic token references | Keyboard/focus/meaning, contrast, target size, motion | Implementer/Tester evidence needed |
 | --- | --- | --- | --- | --- | --- |
-| `<name/ID>` | `<reuse or PRD proposal>` | `<specific behavior>` | `<existing names or approved addition>` | `<testable requirements>` | `<observable check>` |
+| `<name/ID>` | `<reuse or Planner Output proposal>` | `<specific behavior>` | `<existing names or approved addition>` | `<testable requirements>` | `<observable check>` |
 
 ## Review and unresolved decisions
 
 ### UI/UX Pro Max evidence, if used
 
-| Deliverable ID | Source commit, query and mode | Selected result and fit | Local-guide/PRD translation or rejection | Tool result/artifact |
+| Deliverable ID | Source commit, query and mode | Selected result and fit | Local-guide/Planner Output translation or rejection | Tool result/artifact |
 | --- | --- | --- | --- | --- |
 | `<D-01 or NONE>` | `<pinned commit; exact non-sensitive query>` | `<candidate pattern, not an approved rule>` | `<source section and decision>` | `<output path or NOT RUN reason>` |
 
@@ -59,7 +59,7 @@ This is a self-contained textual implementation handoff. Include complete approv
 | --- | --- | --- |
 | Whole flow and unhappy paths | `<result>` | `<artifact/steps>` |
 | Design-guide checklist and relevant anti-patterns | `<result>` | `<sections and observations>` |
-| Frontend kit/tokens and approved PRD consistency | `<result>` | `<source IDs and findings>` |
+| Frontend kit/tokens and approved Planner Output consistency | `<result>` | `<source IDs and findings>` |
 | Actual visual viewer review, if applicable | `<result>` | `<viewer, conditions, artifact>` |
 
 | Question/change ID | Exact source conflict or missing decision | Impact and route/owner | Status |
@@ -95,4 +95,4 @@ Keep earlier round evidence linked. An approved baseline change needs its decisi
 - Remaining unverified: `<specific items or NONE>`
 - Recommendation to Orchestrator: `<candidate ready for review / revision needed / blocked, with evidence>`
 
-This Output records the design candidate and any explicitly performed visual review. It does not approve a PRD, certify functional behavior or accept a feature.
+This Output records the design candidate and any explicitly performed visual review. It does not approve a Planner Output, certify functional behavior or accept a feature.

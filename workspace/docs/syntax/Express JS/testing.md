@@ -100,7 +100,7 @@ keeps its own fixtures, and the two suites share nothing
 
 ```
 tests/
-  kilo/
+  tester-a/
     modules/
       users/
         users.routes.test.ts      # the HTTP contract, through supertest
@@ -112,7 +112,7 @@ tests/
         validate.test.ts          # edge helpers (src/shared/http/)
     fixtures/
       users.json                  # this tester's own, never shared
-  opencode/                       # the same paths: an independent suite
+  tester-b/                       # only if a second Tester is actually assigned
 ```
 
 ## Key Rules
@@ -129,3 +129,5 @@ tests/
 Vitest is recommended for new projects: same API as Jest but native ESM, dramatically faster, and better watch mode. Migration from Jest is straightforward — [migration guide](https://vitest.dev/guide/comparisons).
 
 Source: [Vitest comparisons](https://vitest.dev/guide/comparisons), [Node.js test runner](https://nodejs.org/api/test.html)
+
+Test directory names in this example are placeholders. Roster and the authorized brief select actual Tester operators, count and isolated write scopes; they do not require a second operator. Follow the shared delivery cycle for Orchestrator's personal verification of corrections, without automatic Tester redispatch.

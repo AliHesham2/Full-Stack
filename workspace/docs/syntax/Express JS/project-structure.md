@@ -1,7 +1,7 @@
 # Project Structure
 
 > **In this project the layout is backend-guide/01-foundation/project-structure.md:** modules by
-> domain (`src/modules/<domain>/…`), not folders by layer. The PRD's Code Structure decides every
+> domain (`src/modules/<domain>/…`), not folders by layer. The approved software TODO specifies each
 > path from that guide. The layer-based layout below is general Express knowledge; its app
 > factory, middleware order and error handler still apply inside the guide's layout.
 
@@ -31,8 +31,8 @@ my-express-app/
       express.d.ts         # Augment Express types
       errors.ts            # Custom error classes
   tests/
-    kilo/                # one folder per tester, each mirroring src/
-    opencode/            #   (backend-guide/01-foundation/project-structure.md)
+    tester-a/            # one folder per tester, each mirroring src/
+    tester-b/            #   (backend-guide/01-foundation/project-structure.md)
   package.json
   tsconfig.json
   vitest.config.ts
@@ -177,3 +177,5 @@ type CreateUserBody = z.infer<typeof createUserSchema>;
 3. **Config scattered across files** — centralize in `config/env.ts`
 4. **No `.env.example`** — new devs don't know what env vars to set
 5. **Using `require()` in a TypeScript project** — use ESM imports throughout
+
+Test directory names in this example are placeholders. Roster and the authorized brief select actual Tester operators, count and isolated write scopes; they do not require a second operator. Follow the shared delivery cycle for Orchestrator's personal verification of corrections, without automatic Tester redispatch.

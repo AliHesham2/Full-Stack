@@ -15,7 +15,7 @@ Avoid testing library internals (wrapper components, prop drilling paths, hook m
 ## E2E Testing: Playwright
 
 **In this project E2E is the user's:** the user checks every finished feature end to end, by hand,
-in the browser (CLAUDE.md → Workflow step 10). No worker writes E2E tests, and setup does not
+in the browser ([delivery cycle](../../../agents/orchestrator/skillz/delivery-cycle.md)). No worker writes E2E tests, and setup does not
 install Playwright. The rest of this section applies only if the user asks for automated E2E.
 
 Playwright is the clear winner over Cypress in 2026. It provides multi-browser coverage (Chromium, Firefox, WebKit), auto-waiting (no manual `waitFor` calls), a built-in trace viewer for debugging failures, and native visual comparisons.
@@ -42,7 +42,7 @@ Use `jest-axe` instead — the name is historical, it works with Vitest, and it 
 maintained (11.0.0, July 2026):
 
 ```ts
-// in a tester's own helper, in its folder (jest-axe: a PKG-n in the setup PRD)
+// in a tester's own helper, in its folder (jest-axe: an approved package decision in Planner Output/software TODO)
 import { expect } from 'vitest';
 import { toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
@@ -85,18 +85,12 @@ For RSCs with complex data transformations or conditional rendering logic, extra
 
 ## Test Organization
 
-- **Unit and component tests belong to the testers, one folder each:** `tests/kilo/` and
-  `tests/opencode/` (inside `frontend/`, and the same inside `backend/`). Each folder mirrors the
-  source path: the tests for `src/features/auth/actions.ts` are
-  `tests/kilo/features/auth/actions.test.ts` and `tests/opencode/features/auth/actions.test.ts`.
-  Two testers write two independent suites for the same code, so they never collide, and a
-  disagreement between them on one acceptance check is a signal worth checking.
-- **Every test's name starts with the acceptance check it proves:** `AC-3: rejects a wrong password`.
-  The two suites are then compared AC by AC.
-- **Nobody else writes in a tester's folder.** The implementer runs both suites through
-  `npm run check`, and never edits or deletes a tester's test.
-- **E2E is the user's, by hand** (§ E2E Testing above): no `e2e/` folder unless the user asks for automated E2E.
-- **Test helpers live in each tester's own folder** — custom render functions, MSW handlers, factory functions. The two suites share nothing; `src/test-utils/` holds only the runner's setup file.
+- **Unit and component tests belong to the assigned Tester operator(s), one authorized folder each:** `tests/<assigned-tester>/` inside the relevant app. Roster and the brief identify actual operators, count and write scopes; examples do not appoint clients or require two testers. Each folder mirrors the source path, such as `tests/<assigned-tester>/features/auth/actions.test.ts`.
+- **Every test's name starts with the acceptance check it proves:** `AC-3: rejects a wrong password`. Compare actual evidence AC by AC; two viewpoints from one operator are not independent suites.
+- **Nobody else writes in a Tester's folder.** Implementer runs existing suites through `npm run check`, fixes product code and reports test defects without editing assertions/fixtures. Orchestrator reviews the initial Tester report individually, routes corrections and personally executes existing correction/regression checks; fixes do not automatically return to Tester.
+- **E2E is the owner's, by hand** (§ E2E Testing above): no `e2e/` folder unless explicitly requested.
+- **Test helpers live in each assigned Tester's own folder** — render helpers, fixtures, factories and mock handlers; operators do not overwrite/share mutable test records. `src/test-utils/` holds only the runner's setup file. Multiple suites remain separately owned when actually assigned.
+
 
 ## Coverage Policy
 

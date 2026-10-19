@@ -177,7 +177,7 @@ Automated tools catch only a minority of accessibility issues — commonly cited
 violation:
 
 ```ts
-// in a tester's own helper, in its folder (jest-axe: a PKG-n in the setup PRD)
+// in a tester's own helper, in its folder (jest-axe: an approved package decision in Planner Output/software TODO)
 import { expect } from 'vitest';
 import { toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);

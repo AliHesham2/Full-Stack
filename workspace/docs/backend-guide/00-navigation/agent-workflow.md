@@ -33,7 +33,7 @@ guide before considering any task complete — specifically the validation order
 
 Execute this loop for every task, feature, or fix. Do not skip steps because the task "seems small" — small tasks are where security holes and architectural drift accumulate.
 
-In this project, the stages of every task and when it is done are set by your Skill file (`docs/.claude/<you>-Skill.md`). This loop gives each stage its knowledge: 1–3 → understand and inspect · 4 → your criteria · 5 → the work · 6 → verify · 7 → the cleanup before your report.
+Start from [Roster](../../../rostar/roster.md), the assigned role prompt/Skill and [delivery cycle](../../../agents/orchestrator/skillz/delivery-cycle.md). This loop supplies engineering knowledge for the assigned phase; it does not appoint operators or authorize taking over other roles. Planner Output and the software/design TODOs provide current requirements and task scope at the paths supplied in the brief.
 
 ```
 1. UNDERSTAND     — What is being asked? What phase is the project in?
@@ -94,10 +94,10 @@ If you cannot answer these, you are not ready to write code.
 1. **Correctness** — does it do what was asked, and NOT do what wasn't asked?
 2. **Tests** — happy path + validation failures + authorization denials + failure paths. See `09-testing/testing-strategy.md`. The testers write them, each in its own folder (`tests/<tester>/`); the implementer runs every suite with `npm run check` and never writes or edits a test.
 3. **Security** — run the question set in `04-security/security-foundations.md` § threat checklist. For AI agents this step is mandatory, not optional: unverified AI code is the documented top source of introduced vulnerabilities.
-4. **Failure behavior** — what happens when the DB is down? When the same request arrives twice? When the response times out? 
+4. **Failure behavior** — what happens when the DB is down? When the same request arrives twice? When the response times out?
 5. **Architecture consistency** — does the change respect existing boundaries and dependency direction? (`01-foundation/architecture.md`)
 
-**7. FINISH** — Remove debris (dead code, TODOs you won't do, commented-out experiments). Report as your Skill file's REPORT rule says: every decision with its source (file, section, and the exact words); you never write a decision file (where decisions are recorded: `10-delivery/documentation-and-decisions.md` §4). Do not "improve" unrelated code. Do not redesign.
+**7. FINISH** — Remove debris (dead code, TODOs you won't do, commented-out experiments). Report through the assigned role's Output with actual candidate/check evidence and source-backed decision proposals. Planner owns canonical DEC/CHG records; Orchestrator owns the linked control record (`10-delivery/documentation-and-decisions.md` §4). Do not write other roles' records or automatic follow-up assignments. Do not "improve" unrelated code. Do not redesign.
 
 ---
 
@@ -163,4 +163,4 @@ These apply regardless of project phase, stack, or convenience:
 - Read `README.md` once per session to re-orient.
 - Read only the files routed by `decision-index.md` for the current task.
 - Cross-references inside files are pointers, not obligations — follow only if the current task touches that area.
-- Freshness labels in each file header mark items labeled `emerging` or `ecosystem-volatile`: follow them as written, and if one looks outdated, report it in the mailbox. Never silently override a project decision. Report source-backed discrepancies; Claude authorizes verification and updates volatile facts at the source, retaining the fixed architecture.
+- Freshness labels in each file header mark items labeled `emerging` or `ecosystem-volatile`: follow them as written, and if one looks outdated, report it in the mailbox. Never silently override a project decision. Report source-backed discrepancies through Orchestrator to the authorized source owner. Research or guide updates require actual authority and preserve approved architecture and the local syntax policy.

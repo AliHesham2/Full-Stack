@@ -15,7 +15,7 @@ The core economic truth: **complexity is paid continuously** (debugging, onboard
 
 ## 2. The Justification Bar
 
-Before introducing structural complexity, answer in writing, in the PRD before any code (a DEC-n row: `../10-delivery/documentation-and-decisions.md` §4):
+Before introducing structural complexity, answer in writing, in Planner Output and the approved software TODO before any code (a DEC-n row: `../10-delivery/documentation-and-decisions.md` §4):
 
 1. **What measured problem does this solve?** (latency number, incident, team friction — not "scale")
 2. **What is the simplest alternative that solves 80% of it?**
@@ -66,7 +66,7 @@ Because the consumer of this guide is an AI agent writing code:
 2. **Do not mimic tutorial architecture.** Tutorials demonstrate maximum machinery for teaching; production minimizes it.
 3. **Do not name things "Enterprise/Base/Abstract/Manager/HandlerFactory"** unless the abstraction passed §2's bar. Long class taxonomies are a cargo-cult signature.
 4. **When extending existing code, copy its level of abstraction** — if the codebase is plain functions, your feature is plain functions. Consistency beats sophistication.
-5. **If a requested feature genuinely needs more structure** (e.g., it's the first async work), that's an explicit decision: it is made in the PRD first (a DEC-n row), never while writing the code. The implementer builds only what the PRD decided; a need the PRD does not cover → report BLOCKED with the triggering evidence. Keep the introduction minimal.
+5. **If a requested feature genuinely needs more structure** (e.g., it's the first async work), that's an explicit decision: it is recorded in Planner Output first (DEC-n) and reflected in the software TODO, not invented while writing code. Implementer builds approved scope; a need the current plan does not cover → report BLOCKED with the triggering evidence. Keep the introduction minimal.
 
 ## 7. Complexity Acceptance Checklist
 

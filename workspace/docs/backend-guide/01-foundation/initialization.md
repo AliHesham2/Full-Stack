@@ -30,11 +30,10 @@ Establish foundations in this order — each step depends on the previous one be
 
 **In this project, THE CHECK comes right after the skeleton:** step 1 also sets up §2.8's test
 runner and `npm run check`, and §2.10's lint and typecheck config, because every later step is
-verified by THE CHECK (CLAUDE.md → VERIFY). The rest keeps this order.
+verified with actual evidence under the assigned role procedure and shared delivery cycle. The rest keeps this order.
 
 ### 2.1 Project skeleton
-The app lives in `backend/` at the project root, with its own `package.json` (CLAUDE.md → the
-project's layout). Read `architecture.md` and `project-structure.md` before creating directories. Decide module boundaries early — renaming directories is cheap in week 1 and expensive in month 6. Create only the structure needed for the first feature plus the shared foundations above; do not pre-create `services/`, `workers/`, `events/` directories with nothing to put in them.
+The app lives in `backend/` at the project root, with its own `package.json` (this guide's README and project-structure define its app boundary). Read `architecture.md` and `project-structure.md` before creating directories. Decide module boundaries early — renaming directories is cheap in week 1 and expensive in month 6. Create only the structure needed for the first feature plus the shared foundations above; do not pre-create `services/`, `workers/`, `events/` directories with nothing to put in them.
 
 ### 2.2 Configuration
 - All configuration flows through **one typed, validated config object** loaded at startup. Scattered `process.env` reads across the codebase are a defect (untraceable, untestable, typo-prone).
@@ -61,22 +60,18 @@ One schema-validation library chosen and wrapped in a single boundary helper. Ev
 Connection pool with explicit size budget, timeouts, and a startup connectivity check. Migration tooling wired from day one — the first migration is the project's `init` migration, not a retrofitted script. See `../05-data/migrations.md`.
 
 ### 2.8 Tests & CI
-Test runner and a database isolation strategy (per-test database or transaction rollback). Establish this before the first feature or the first feature will not be tested. See `../09-testing/testing-strategy.md`. In this project the work happens without a remote (CLAUDE.md → GIT): THE CHECK below, run by the orchestrator on every step, is the gate a CI pipeline would be. A CI pipeline for deployment (`../10-delivery/ci-cd.md`) is the user's to set up. The implementer writes no test: the testers write every test, setup's included, each in its own folder (`tests/<tester>/`), in the test round, so the `test` script passes with no tests until the first one exists.
+Test runner and a database isolation strategy (per-test database or transaction rollback). Establish this before the first feature or the first feature will not be tested. See `../09-testing/testing-strategy.md`. THE CHECK below supplies local quality evidence; git, CI and release operations require their actual owner/host authorization. Repository remotes do not change role ownership or prove verification. A CI pipeline for deployment (`../10-delivery/ci-cd.md`) is the user's to set up. The implementer writes no test: the testers write every test, setup's included, each in its own folder (`tests/<tester>/`), in the test round, so the `test` script passes with no tests until the first one exists.
 
-**Test-discovery gate:** --passWithNoTests is temporary for untested bootstrap only.
-Keep it while the initial setup steps are built. After the first test round has produced
-discovered and executed tests in both tests/kilo/ and tests/opencode/, Claude routes removal
-through a CHANGE REQUEST on setup: Anti2.0 updates the PRD version, Change Log and ROADMAP;
-Claude checks them by hand; the implementer changes package.json to vitest run.
-Claude never edits package.json. Both testers then rerun all suites on the changed revision.
-Before setup is marked tested, Claude verifies nonempty discovery/execution in both folders,
-the strict script, and a named passing result for every automatable AC. Missing, skipped or
-UNVERIFIED automatable checks block readiness. Manual ACs may remain explicitly UNVERIFIED
-at ready-for-user-check, but block final done until the user's check passes.
+**Test-discovery gate:** `--passWithNoTests` is temporary for untested bootstrap only.
+A zero-test bootstrap check verifies tooling, not product behavior. The Roster/brief identifies the actual Tester operator(s) and their permitted test folders; no fixed clients or mandatory pair is implied. After the assigned initial implementation test phase produces nonempty discovered/executed tests, Orchestrator reviews every result and the required AC coverage.
+
+Orchestrator routes the strict-script change through Planner's approved software TODO/change record and briefs Implementer to remove the temporary flag (`vitest run`). Implementer edits application configuration and reports the new candidate; Orchestrator personally reruns the existing suites and quality gates. Do not automatically send the fix back to Tester. If new/changed tests or unavailable verification are required, keep that scope blocked for the owner's decision under the shared delivery cycle.
+
+Before setup is recommended ready, verify nonempty execution in each assigned test scope, the strict script and actual evidence for applicable automatable ACs. Missing/skipped/unverified required checks block that readiness. Pending owner manual E2E remains explicit and blocks final product acceptance until the actual owner check. A passing script alone is not acceptance.
+
 Run a production build before readiness.
 
-**THE CHECK — `npm run check`.** One command decides whether work is done; the orchestrator runs
-it itself, and a worker's "done" never replaces it:
+**THE CHECK — `npm run check`.** This command supplies necessary configured quality-gate evidence; it does not alone prove acceptance. Orchestrator verifies actual candidate results, and a worker's "done" never substitutes for them:
 
 ```json
 "scripts": {

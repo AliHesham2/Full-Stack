@@ -18,7 +18,7 @@ Before authorized bridge communication, operators must follow [bridge entry](../
 
 No new assignments are approved yet for the reusable role packages below. The project owner will define them later.
 
-This starter-template record does not revoke or migrate the current legacy workflow: `CLAUDE.md` still assigns Claude as its orchestrator and `AGENTS.md` defines Codex's current advisor/authorized architect scope. Creating this file does not switch those live roles or activate the new packages. A transition requires an explicit owner decision and reconciliation of the affected entry instructions; do not silently choose between conflicting assignments.
+The root client entry points here and does not appoint an operator. The owner has adopted the role packages linked below as the reusable workflow; actual project assignments remain pending. No model has a default role. Activating an assignment still requires its actual owner authorization and host permissions; task history and client identity do not fill a blank row.
 
 | Role | Assignment | Required starting point | Status |
 | --- | --- | --- | --- |
@@ -35,4 +35,4 @@ Every assigned operator starts at the prompt identified in its row, then follows
 
 Advisor is optional. Select an operator only for an authorized useful review; no permanent named relationship to Orchestrator is assumed. Its absence alone is not a blocker. Advice is nonbinding and actual decisions/verification remain with their established owners; lack of an advisor does not waive missing mandatory evidence.
 
-Role-structure guide: `workspace/agents/agents-guide.md` is not yet created. Do not treat that pending document as an available procedure; use the existing role prompts and project folder map for current navigation.
+The table above is the role-entry map. Use the linked prompts for role methods and the actual [frontend](../docs/frontend-guide/GUIDE-MAP.md), [backend](../docs/backend-guide/GUIDE-MAP.md), [design](../docs/design-guide/GUIDE-MAP.md) and [syntax](../docs/syntax/GUIDE-MAP.md) maps for knowledge navigation. Task and evidence paths come from the authorized brief/control record; do not require an additional role guide or a deleted folder map.

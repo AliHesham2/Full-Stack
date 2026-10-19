@@ -17,7 +17,7 @@ Documentation is **the system's memory** — for the next developer, the on-call
 |---|---|---|---|
 | **README** | How do I run/test/migrate this locally? | repo root | Always true — verified by a newcomer-boot test |
 | **Architecture overview** | What are the modules/boundaries and why? | `docs/architecture.md` + ADRs | Per structural change |
-| **ADRs** | Why is it this way? (the decision log) | the feature's PRD and `docs/.claude/Decisions-Taken.md` (§4) | Append-only |
+| **ADRs** | Why is it this way? (the decision log) | canonical Planner Output DEC/CHG entries, linked from the task control record (§4) | Append-only |
 | **API contract docs** | What does the surface promise? | generated from code/schema where possible | Per API change |
 | **Runbooks** | The service is down — now what? | linked from alerts | Reviewed per incident postmortem |
 | **Operational notes** | Deploys, migrations, backups, restore drills | `docs/ops/` | Per change to those flows |
@@ -30,27 +30,17 @@ The README must get a context-free engineer (or agent) to a running, tested loca
 
 ## 4. ADRs (Architecture Decision Records)
 
-**In this project an ADR is not a separate file.** It lives in exactly one of two places:
+**A product/architecture decision has one canonical home:** a versioned `DEC-n` record in Planner Output at the task's authorized path, linked by the Orchestrator's single control record. Consequential changes use that Output's `CHG-n` impact analysis. The software TODO links complete API/DB/SEC definitions and the actual design TODO owns visual specifications; do not duplicate them in another decision log.
 
-- **Decided before the build** → a DEC-n row in the feature's PRD (`plans/<feature>/PRD.md` →
-  Code Structure → Decisions), written by the PRD writer and approved by the user. A choice the
-  guides leave open is first an Open Question; its answer (the user's, or Claude's for a
-  technical choice) becomes the row. A later change is a new PRD version with a Change Log line;
-  a superseded row stays, marked `(REMOVED in vN)`.
-- **Decided during the work** → an entry in `docs/.claude/Decisions-Taken.md`, written only by
-  Claude (the orchestrator): its own decisions, and the ones from the workers' reports that must
-  be kept.
+Planner prepares proposals and updates its records when the applicable decision is returned. Record actual authority/approval and source versions; unresolved questions are not approved defaults. Workers report evidence and proposals through Orchestrator rather than editing Planner's records. Coordination-only routing/review decisions stay in the control record with a link to any affected canonical product decision.
 
-Workers report each decision with its source and never write a decision file. Both places keep
-the fields of the format below: Context, Decision, Alternatives (and why each lost),
-Consequences, Assumptions & revisit triggers (with the direction to take then). The date and
-status come from the PRD's version and Change Log, or from the entry's date.
+Preserve context, decision, alternatives and why they lost, consequences, assumptions/revisit triggers, date, source version and status. Retain superseded decisions and history; do not create a second current definition or infer agreement from a worker report. No fixed model name, old feature directory or separate legacy decision file is required.
 
 Format (short, structured, append-only):
 
 ```markdown
-# ADR-NNN: <Decision title>
-Date / Status (proposed | accepted | superseded by ADR-MMM)
+# DEC-n: <Decision title>
+Date / Status (proposed | accepted | superseded by DEC-m)
 
 ## Context
 The forces at play: constraints, requirements, measured facts.

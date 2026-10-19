@@ -7,7 +7,7 @@
 | Field | Value |
 | --- | --- |
 | Task / assigned operator | `<IDs>` |
-| Brief and approved requirements baseline/version | `<current Planner Output path/IDs; no old PRD required>` |
+| Brief and approved requirements baseline/version | `<current Planner Output path/IDs; no historical document required>` |
 | Role entry / handoff state / decision reference | `<workspace/agents/designer/prompt.md; actual readiness and authority>` |
 | User goal, actors and design scope | `<source IDs and summary>` |
 | Outcome slices / inherited shared constraints / required source material | `<Planner Output SL/DEC IDs and source paths/sections; proposed rules remain proposals>` |
@@ -19,13 +19,13 @@
 
 | Source | Relevant section/ID | Design decision it constrains |
 | --- | --- | --- |
-| `<PRD, design-guide, frontend-guide or contract path>` | `<heading/ID>` | `<specific consequence>` |
+| `<Planner Output, design-guide, frontend-guide or contract path>` | `<heading/ID>` | `<specific consequence>` |
 
 ## Planned deliverables
 
 | Item ID | Source IDs / user job | Deliverable | States, viewports, themes, direction | Existing kit/token reuse or proposed gap | Review evidence | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `D-01` | `<UI/FL/DS/AC IDs>` | `<flow, screen, component, content or token spec>` | `<applicable conditions>` | `<reuse, or proposal needing PRD change>` | `<artifact and review method>` | `TODO` |
+| `D-01` | `<UI/FL/DS/AC IDs>` | `<flow, screen, component, content or token spec>` | `<applicable conditions>` | `<reuse, or proposal needing Planner Output change>` | `<artifact and review method>` | `TODO` |
 
 ## Consumed and produced boundaries
 
@@ -43,7 +43,7 @@ Group work into coherent deliverables that can be reviewed independently. Fold n
 
 ## Optional reference methods
 
-| Deliverable ID | Method and local adapter | Exact question or target | Why local guide/PRD is insufficient | Planned evidence |
+| Deliverable ID | Method and local adapter | Exact question or target | Why local guide/Planner Output is insufficient | Planned evidence |
 | --- | --- | --- | --- | --- |
 | `<D-01 or NONE>` | `<Vercel code review or Impeccable mode/critique/playbook>` | `<specific decision or artifact>` | `<unique gap>` | `<file:line, rendered state, or specification section>` |
 
@@ -51,7 +51,7 @@ Group work into coherent deliverables that can be reviewed independently. Fold n
 
 | Deliverable ID | Question to resolve | Query and mode (`--domain`, `--stack` or `--design-system`) | Why the existing design guide is insufficient | Expected evaluation evidence |
 | --- | --- | --- | --- | --- |
-| `<D-01 or NONE>` | `<specific design choice>` | `<non-sensitive terms and mode>` | `<need for searchable examples, or NOT APPLICABLE>` | `<fit against PRD, guides and kit>` |
+| `<D-01 or NONE>` | `<specific design choice>` | `<non-sensitive terms and mode>` | `<need for searchable examples, or NOT APPLICABLE>` | `<fit against Planner Output, guides and kit>` |
 
 ## Implementation visual review plan — later phase, when assigned
 

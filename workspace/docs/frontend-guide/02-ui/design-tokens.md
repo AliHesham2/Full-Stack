@@ -125,7 +125,6 @@ these are `@utility` classes in `tokens.css`.
   that asymmetry.
 - **Deviate only for:** (1) an accessibility failure such as insufficient contrast, (2) something
   that cannot be built performantly, (3) a state the design doesn't cover (empty, error, long
-  text). Use existing tokens. The deviation is decided in the PRD (its UI-n item: what was
-  specified, what is built, and why), never straight in the code.
+  text). Use existing tokens. The deviation is reviewed through Orchestrator and recorded in the approved design TODO/UI-n and affected Planner Output/software task: what was specified, what changes, why and the actual authority. It is never introduced silently in code.
 - **Naming:** by role, never by value or hue: `primary`, `muted`, never `blue`, `gray`. That is
   what lets a project change its brand from blue to purple by editing one file.

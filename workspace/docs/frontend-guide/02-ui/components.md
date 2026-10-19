@@ -191,7 +191,7 @@ count or imagined reuse.
 - **No `index.ts` barrels.** Import from the file: `import { Button } from '@/components/ui/button'`.
 - A multi-part composite may get a folder, with each part imported directly:
   `components/ui/data-table/data-table.tsx`, `data-table-toolbar.tsx`, and so on.
-- Tests live in each tester's folder, not next to the file (`tests/kilo/components/ui/button.test.tsx`;
+- Tests live in each tester's folder, not next to the file (`tests/<assigned-tester>/components/ui/button.test.tsx`;
   see [testing](../04-quality/testing.md)).
   Storybook is deferred until the project decides it needs it.
 

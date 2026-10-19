@@ -31,7 +31,7 @@ Choose services over monolith only when **multiple** of these are true — measu
 3. Hard isolation requirement (compliance, blast radius) that code boundaries cannot satisfy
 4. Different runtime/technology requirements per domain
 
-If fewer than two apply: monolith. This guide decides that, so the PRD cites this section and asks nothing. Only when two or more apply is the choice left open: it is then an Open Question in the PRD, and its answer a DEC-n row (an ADR: `../10-delivery/documentation-and-decisions.md` §4).
+If fewer than two apply: monolith. Planner cites this existing rule in its Output/software TODO rather than reopening it. When the criteria leave a real choice open, Planner records the question and obtains the actual authorized decision through Orchestrator; a DEC-n in Planner Output preserves the rationale (decision record: `../10-delivery/documentation-and-decisions.md` §4).
 
 ## 4. Boundaries
 

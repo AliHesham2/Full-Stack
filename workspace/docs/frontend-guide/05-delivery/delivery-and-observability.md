@@ -81,11 +81,8 @@ Telemetry is user data and is regulated (GDPR/CCPA):
 
 ## Documentation and Decisions
 
-Future agents (and humans) inherit this project. Every decision is kept in exactly one of two places, so none evaporates and none is recorded twice. The agent workflow ([agent-workflow.md](../00-navigation/agent-workflow.md)) reads both before starting any task:
+Use the current task's approved Planner Output and its canonical DEC/CHG records, linked from Orchestrator's single control record. Planner owns product/architecture proposals and approved decision updates; Orchestrator owns coordination/review state. Workers report source-backed recommendations rather than editing those records. Decisions made during execution follow the same ownership and actual approval rules as planning decisions; no parallel decision log is created.
 
-- **Decided before the build** — the feature's PRD (`plans/<feature>/PRD.md`), written by the PRD writer and approved by the user. A choice the guides leave open is first an Open Question; its answer (the user's, or Claude's for a technical choice) is recorded there, and becomes a DEC-n row when it is expensive to reverse, or a PKG-n row when it adds a package. A later change is a new PRD version with a Change Log line.
-- **Decided during the work** — `docs/.claude/Decisions-Taken.md`, written only by Claude (the orchestrator): its own decisions, and the ones from the workers' reports that must be kept. Workers report each decision with its source; they never write a decision file.
-
-A decision record (a DEC-n row, or an entry in Decisions-Taken.md) keeps these fields: context → options considered, and why each lost → decision → consequences → assumptions, what would re-open it, and the direction then. A PKG-n row keeps the package, its app, why it is needed, and its source. Ten lines now beats re-litigating the same debate every quarter.
+Each consequential decision records context, options and reasons, actual authorized choice, consequences, assumptions/revisit triggers, source/version and status. Package choices record the app, need, compatible source/version and actual authorization in the same planning/task record. Retain superseded history and reconcile the software/design TODOs and affected evidence when a decision changes. See [backend decision-record guidance](../../backend-guide/10-delivery/documentation-and-decisions.md#4-adrs-architecture-decision-records) for the common fields. Neither documentation nor a reviewed plan grants deployment or release permission.
 
 Keep README current: setup steps, env var list pointer to `.env.example`, scripts, and a one-paragraph architecture summary.

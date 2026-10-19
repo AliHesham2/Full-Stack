@@ -22,7 +22,7 @@ Tests exist to catch **classes of defects** cheaply. Each test type is a tool fo
 | **E2E** | Critical user journeys across the real stack | full env | few (smoke + money paths) |
 | **Failure-path** | Degradation: dependency down, timeout, retry, DLQ | fault injection (proxies/kills) | per critical dependency |
 
-**In this project E2E is the user's:** the user checks every finished feature end to end, by hand (CLAUDE.md → Workflow step 10). The testers write every other level, each in its own folder.
+**In this project E2E is the user's:** the user checks every finished feature end to end, by hand ([delivery cycle](../../../agents/orchestrator/skillz/delivery-cycle.md)). The testers write every other level, each in its own folder.
 
 **What NOT to test:** the framework (routing works), the ORM (it persists), mock implementations (testing your mocks tests nothing), and exhaustive permutations of trivial mapping code. Every test must name the defect it would catch — if you can't, it's coverage theater.
 
