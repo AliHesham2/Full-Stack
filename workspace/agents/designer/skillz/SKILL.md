@@ -1,0 +1,39 @@
+# Designer skill — discover, specify, review, hand off
+
+Use this after [../prompt.md](../prompt.md) on every assigned Designer task. It is a procedure, not an assignment or tool permission.
+
+In the new input-driven route, approved Planner Output/version supplies the requirements baseline wherever this procedure refers to PRD. No deleted document/template is required. Produce your own detailed design TODO for Implementer alongside actual Output; Planner owns the separate software TODO. Follow [delivery cycle](../../orchestrator/skillz/delivery-cycle.md) and [detailed handoff procedure](detailed-design-handoff.md); anticipated designs do not establish readiness.
+
+For task-relevant searchable UI examples, use the [UI/UX Pro Max adapter](ui-ux-pro-max-integration.md). It routes any assigned operator to the preserved upstream skill and local search data while keeping the approved PRD, design guide and frontend guide authoritative.
+
+When the owner supplies screenshots, a full-page image or HTML/React examples, follow the [Designer input route](../input/README.md) before making visual decisions. For a focused review of an existing web interface, use the [Vercel Web Interface Guidelines adapter](web-interface-guidelines-integration.md). For new visual direction, refinement versus redesign, or a critique of a rendered candidate, use the relevant [Impeccable playbook through its adapter](impeccable-integration.md). Select only methods the assignment needs; these references do not add product rules, role permissions or a second output system.
+
+## 1. Read the right sources
+
+Start at [design GUIDE-MAP](../../../docs/design-guide/GUIDE-MAP.md) for its flowchart, task routes and file summaries. Then read the actual [design-guide INDEX](../../../docs/design-guide/INDEX.md) and its required [cognitive principles](../../../docs/design-guide/foundations/cognitive-principles.md) and [visual hierarchy](../../../docs/design-guide/foundations/visual-hierarchy.md). Use [when-to-what](../../../docs/design-guide/when-to-what.md) when choosing a pattern. Open only the relevant design-guide pages for the assigned flow, components, copy, accessibility, visual system and anti-pattern review; do not treat the folder as a single generic inspiration prompt.
+
+Read the [frontend-guide navigation](../../../docs/frontend-guide/README.md) and task-relevant `02-ui`, `01-foundation/routing`, `03-data`, `04-quality` sections. The approved PRD/owner decides **what** the product does; the frontend guide sets this project's technical and kit constraints; the design guide explains **how** to make the experience usable. The `syntax/` pages explain technology, not new product decisions. If two sources conflict, quote both exact locations in the Output and ask the Orchestrator to resolve it; do not silently use the more attractive example.
+
+Examples in the design guide are recommendations, not permission to override local constraints. In particular, its generic three-tier token examples do not create extra token files or component-level tokens here: use the semantic names and `theme.css`/`tokens.css` division in [frontend design-tokens](../../../docs/frontend-guide/02-ui/design-tokens.md). Its WCAG touch-target floor does not lower this project's [44×44px component rule](../../../docs/frontend-guide/02-ui/components.md). Where a design-guide example names a native element but the approved kit names a library component, specify the required observable behavior and raise any unresolved implementation conflict; do not create a competing component. Pattern diagrams and example copy must also be reconciled with the approved PRD.
+
+## 2. Make a TODO before design work
+
+Create or continue your own internal work TODO using [../templates/todo.md](../templates/todo.md). Planner does not prepare it. Plan the distinct downstream [design TODO](../templates/design-todo.md) as a deliverable: this is the detailed implementation specification, not a duplicate of your internal execution checklist. Inspect assigned Planner input references without moving/copying originals. List each `UI-n`, `FL-n`, `DS-n` and relevant `AC-n`, the user job, expected deliverable, applicable guide sections, states/viewport/language conditions and planned review evidence. Inventory any owner-provided `input/` reference before designing, including what it can and cannot establish. Mark unknown requirements explicitly. Send the TODO to the Orchestrator by the authorized route before making the design candidate; its review does not enlarge the brief's permissions.
+
+## 3. Design flows, then screens and components
+
+Start with actors, tasks, entry points and the complete flow, including unhappy paths and recovery. Set content and microcopy before polishing layout. For each screen describe hierarchy, navigation, calls to action, information/data needed, exact copy or approved content source, and state transitions. Distinguish empty data from empty search results, errors from denied access, and loading from delayed success.
+
+For each shared component, document why the existing kit is insufficient before proposing a `DS-n` addition. Specify semantics, keyboard/focus, disabled/loading/error/success states, responsive behavior and semantic token references. For each screen check phone/tablet/desktop, light/dark, RTL/LTR where relevant, text zoom, long strings, touch targets, contrast and reduced motion. Use the [design guide's pre-delivery checklist](../../../docs/design-guide/INDEX.md#pre-delivery-qa-checklist) and task-relevant anti-pattern pages as review prompts; record what was actually checked.
+
+Do not fabricate API response shapes, data values or permissions. Use the approved PRD/contracts to describe dependencies. Where a design needs a new business rule, contract or `DS-n`/`UI-n` item outside the approved scope, stop that dependent design and log a change request; continue independent authorized work.
+
+## 4. Validate the candidate and hand it off
+
+Inspect the complete specified flow, not just the hero screen. Cross-check every deliverable against its source IDs, the frontend kit, and relevant design-guide pages. Review intended visual artifacts in the actual target viewer if the brief provides one; otherwise mark visual verification `NOT RUN`. Do not call a prototype functional without observing the real behavior. After a revision, recheck affected states and downstream handoff references.
+
+Complete the design TODO through [detailed handoff procedure](detailed-design-handoff.md) and link it from [../templates/output.md](../templates/output.md) at the assigned output path. Include actual artifacts, versions, coverage, precise screen/flow/component/state/responsive specifications, token/content decisions, evidence, unresolved questions and verification needs. Tester reviews the specification first; Orchestrator individually reviews every result, returns confirmed issues to you and personally checks your corrected candidate and affected design scope. No automatic Tester return after corrections. Mark unobserved or tool-limited claims `UNVERIFIED`; do not represent design review as implementation or test PASS.
+
+## 5. Optional later visual review — separate assignment
+
+The default post-Tester correction verifier is Orchestrator, not Designer or another Tester round. A separate later visual review requires an explicit authorized assignment; only then follow [implementation-review.md](implementation-review.md) after an actual implementation candidate and approved design baseline are available. Plan comparison cases in the same TODO, record actual visual evidence and mismatches in the Output, route corrections through Orchestrator, and recheck affected cases after fixes. Until then, record this phase as `NOT RUN`; do not fabricate review artifacts or start an automated E2E workflow.

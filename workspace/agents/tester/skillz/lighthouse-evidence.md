@@ -1,0 +1,13 @@
+# Interpreting Lighthouse evidence
+
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) is a page-audit tool, not a Tester role or a substitute for the [frontend performance guide](../../../docs/frontend-guide/04-quality/performance.md) and existing [performance-testing skill](references/qa-skills-upstream/skills/performance-testing/SKILL.md). Use it only for an authorized performance or page-quality check against a running, named project. Do not install it, add CI configuration, create an arbitrary score threshold or run against a third-party/production target merely because this page exists.
+
+## Compare like with like
+
+Record the candidate/build, final audited URL after redirects, route and content state, authentication/fixture, browser and Lighthouse versions, device/viewport, throttling, cache conditions, environment and run time. Audit the actual production build when making a build-performance claim; a development server is not a production baseline. A login screen, error page, empty response or blocked resource cannot stand in for the intended route. Keep the baseline and candidate on comparable content, environment and configuration.
+
+Lighthouse [documents score variability](https://github.com/GoogleChrome/lighthouse/blob/main/docs/variability.md), even without a code change. Run repeatedly when comparing candidates, retain each report and state the chosen summary statistic and spread. Do not declare a regression or improvement from a single score crossing a threshold. The [Lighthouse CI documentation](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md#numberofruns) supports repeated collection when CI is already approved for the project.
+
+Report the relevant measured values, failed audit IDs and underlying evidence against the approved budget; the category score is diagnostic, not a complete quality certificate. A scoped category run does not prove excluded categories. Lighthouse's lab page-load result does not prove real-user [INP](https://web.dev/articles/lab-and-field-data-differences), full-session CLS, backend capacity or every interactive state. Use authorized field/RUM or task-specific interaction evidence for those claims. Its accessibility findings complement the existing [axe-core procedure](axe-core-results.md) and manual checks; do not count duplicate findings twice.
+
+Save redacted local JSON/HTML reports and link them from the [Tester Output](../templates/output.md). If no agreed budget or comparable baseline exists, report the measurements and the gap as `UNVERIFIED` for the performance acceptance criterion; do not invent a PASS. A report-generation error is `BLOCKED` or `NOT RUN`, never a score of zero.

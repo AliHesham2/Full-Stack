@@ -17,7 +17,11 @@ The project's layout (fixed for every project):
 <project root>/            ← start Claude Code HERE (the bridge only allows writes inside it)
 ├── CLAUDE.md              ← copied from the template
 ├── AGENTS.md              ← copied: Codex's instructions (Claude's advisor; reviews, never works)
-├── docs/                  ← copied: the guides, Skills, and docs/.claude (workers, bridge, state)
+├── docs/.claude/          ← copied: workers, bridge and state; outside workspace
+├── workspace/docs/        ← copied: frontend-guide, backend-guide and syntax/ technology references
+├── workspace/agents/      ← role folders; prompts and assignments pending
+├── workspace/bridge.md    ← bridge access pointer for authorized communication
+├── workspace/learn/       ← template-only lessons and issues; never copied into projects
 ├── plans/                 ← one folder per feature: PRD.md, ROADMAP.md, the user's material
 ├── frontend/              ← the Next.js app. Every frontend-guide path starts here (frontend/src/…)
 └── backend/               ← the Express app. Every backend-guide path starts here (backend/src/…)
@@ -27,7 +31,10 @@ The project's layout (fixed for every project):
   `node_modules`, `npm run check` and deploy. No workspace or monorepo tooling (npm workspaces,
   Turborepo).
 - **Neither imports the other's code.** They meet only over HTTP: `frontend/src/lib/http.ts` →
-  Express on Node.js → the database provider (Supabase for now). Only Express owns database,
+  Express on Node.js → the database provider (Supabase for now).
+  **Contract-Driven Types:** Backend defines API schemas via Zod in `backend/src/contracts/` and exports
+  inferred types (`z.infer<typeof ...>`). Frontend synchronizes and consumes these exact types for `lib/http.ts`.
+  Frontend NEVER hand-codes or guesses API payload shapes. Only Express owns database,
   Supabase and provider-auth SDKs/credentials. Reads use server queries or same-origin GET Route
   Handlers; mutations use Server Actions; file bytes pass through Next.js and Express.
   Run every command inside the app it concerns: `cd frontend && npm run check` (a
@@ -97,8 +104,8 @@ EVERY TASK
 │    └──▶ Claude's own writing (the list in NEVER DO THE WORK YOURSELF):
 │         ├──▶ routine records (State.md, statuses, commits, Lessons.md, a decision that is not
 │         │    high risk) → re-read them yourself
-│         └──▶ a HIGH-RISK decision (the list below this chart), a fix to a docs/ file,
-│              an entry in the template's learn/ → a fresh verifier: Claude Code's Agent tool,
+│         └──▶ a HIGH-RISK decision (the list below this chart), a fix to a workspace/docs/ file,
+│              an entry in the template's workspace/learn/ → a fresh verifier: Claude Code's Agent tool,
 │              not one of the four workers. Give it the original request, the criteria, the
 │              rules and the changed files. It returns PASS, or FAIL with Missing / Incorrect /
 │              Unverified / Required. FAIL → step 6
@@ -228,6 +235,9 @@ ORCHESTRATOR JOB
 │         the diff as the evidence
 │
 ├──▶ VERIFY — Claude is responsible that the work was REALLY done (Every Task, steps 5 → 8)
+│    ├──▶ INSPECT THE RECEIPT FIRST: check the frontmatter RECEIPT block in the worker's post.
+│    │    If VERDICT: ALL_PASS or STATUS: DONE, verify against original criteria and git diff.
+│    │    If HAS_FAILURES or BLOCKED, immediately inspect the failing items from the report without reading full narrative.
 │    ├──▶ against the ORIGINAL criteria, never the worker's own list: the step's MODs and every
 │    │    PRD ID they implement, with their errors, states and ACs (a PRD or a ROADMAP: its
 │    │    template's "How to Write" rules, by hand: Workflow steps 5 and 7)
@@ -282,21 +292,21 @@ ORCHESTRATOR JOB
 │    ├──▶ ask: what CHECK (preferred) or rule, in which file, would have caught it?
 │    │    A check beats a rule, because a check cannot be skipped
 │    ├──▶ only THIS project → an implementer adds it in the project; log it in docs/.claude/Lessons.md
-│    ├──▶ it would help EVERY project → TEMPLATE PATH\learn\lesson.md (see Template)
+│    ├──▶ it would help EVERY project → TEMPLATE PATH\workspace\learn\lesson.md (see Template)
 │    └──▶ something is wrong in the TEMPLATE itself (a Skills file, a guide, a path, a check):
 │         found by you (you are not bound by the workers' rules, so you see what they cannot),
 │         or a worker's "not covered" or "Skills and guide disagree" report — in both cases
 │         validated first (open the file, get the evidence)
-│         ├──▶ FIX IT IN THAT FILE, in this project's docs/, now. A Skills file loses to the
+│         ├──▶ FIX IT IN THAT FILE, in this project's workspace/docs/, now. A syntax file loses to the
 │         │    guide; which side is right is not clear → DECIDE ALONE (the cleanest option) and
 │         │    record it in Decisions-Taken.md. Never a separate list of exceptions: a worker
 │         │    must never have to choose between two sources
 │         ├──▶ the project's CODE follows it too (e.g. a check's config in frontend/ or
 │         │    backend/) → the implementer changes it, through a roadmap step (CHANGE REQUEST)
-│         ├──▶ log it in TEMPLATE PATH\learn\issues.md (see Template), so the template gets the
+│         ├──▶ log it in TEMPLATE PATH\workspace\learn\issues.md (see Template), so the template gets the
 │         │    same fix
 │         └──▶ tell the user right away: what was wrong, in which files, what you changed, and
-│              that it is logged in learn/issues.md
+│              that it is logged in workspace/learn/issues.md
 │
 ├──▶ DECIDE ALONE — the user may leave you working and be away
 │    ├──▶ a technical decision is needed → never stop to ask: take the cleanest option with the best architecture
@@ -311,8 +321,8 @@ ORCHESTRATOR JOB
      ├──▶ you are the software project manager + observer: plan, delegate, observe, verify, decide
      └──▶ your own bookkeeping is the only thing you write: State.md, git checkpoints, every roadmap
           step's Status (built · verified · tested) + Commit, plans/INDEX.md status, Decisions-Taken.md,
-          Lessons.md, a validated fix to a docs/ file (a Skills file or a guide: LEARN), and the
-          template's learn/
+          Lessons.md, a validated fix to a workspace/docs/ file (a syntax file or a guide: LEARN), and the
+          template's workspace/learn/
 ```
 
 ## Workflow
@@ -444,6 +454,9 @@ WORKFLOW
 │           record the failing ACs in State.md
 │      first: each tester reads its own Skill file completely (docs/.claude/Kilo-Skill.md,
 │      docs/.claude/opencode-Skill.md), so it knows exactly how it must test
+│      ├──▶ DATABASE & FIXTURE ISOLATION: unit tests mock DB clients. Integration tests mutating
+│      │    live databases must use dedicated tester prefixes (`kilo_` / `opencode_`) + unique IDs,
+│      │    with mandatory teardown cleanup to prevent parallel collision.
 │      then: both test the same code — every function the build added or changed — following
 │      their Skill file's EVERY TEST ROUND stages in order. Testers do not rewrite the PRD.
 │      Wrong or missing criteria or source rules are SOURCE/DESIGN GAP reports, with a
@@ -496,8 +509,8 @@ EVERY PROMPT
 │       PRD writer  → never write code; never guess (unknowns go to Open Questions)
 │       implementer → build nothing beyond the approved PRD
 │       tester      → never test the PRD; never change source code
-└──▶ 5. where and how to report: the mailbox, in the form your Skill file asks for — the four
-        parts (Changed · Verified · Checks · Remaining), always with SOURCES (for every decision
+└──▶ 5. where and how to report: the mailbox, opening with the required RECEIPT frontmatter block,
+        followed by the four parts (Changed · Verified · Checks · Remaining), always with SOURCES (for every decision
         or finding: its source + section + the exact words from one line of it). Checks =
         each "How to Write" rule's result for the PRD writer, the output of `npm run check` for
         the others
@@ -526,9 +539,9 @@ the code, a test, a worker's behavior, or in these instruction files — tell th
 
 ## Template
 
-This `CLAUDE.md`, `AGENTS.md`, `docs/` and `docs/.claude/` were copied from a generic template
-that many projects share. The template's `learn/` folder is never copied: it exists only in the
-template.
+This `CLAUDE.md`, `AGENTS.md`, `docs/.claude/` and `workspace/docs/` were copied from a generic
+template that many projects share. The template's `workspace/learn/` folder is never copied:
+it exists only in the template.
 The template lives here (the user changes this line by hand):
 
 ```
@@ -537,13 +550,13 @@ TEMPLATE PATH: D:\Aly Data\Guide\FullStack
 
 ```
 TEMPLATE
-├──▶ a lesson that would help EVERY project → TEMPLATE PATH\learn\lesson.md
+├──▶ a lesson that would help EVERY project → TEMPLATE PATH\workspace\learn\lesson.md
 ├──▶ something wrong in the template itself (a Skills file, a guide, a path, a check)
-│    → validate it first (open the file, get the evidence) → TEMPLATE PATH\learn\issues.md,
+│    → validate it first (open the file, get the evidence) → TEMPLATE PATH\workspace\learn\issues.md,
 │    and in the project: fix it there and tell the user (Orchestrator Job → LEARN)
 ├──▶ a lesson for THIS project only → docs/.claude/Lessons.md
-└──▶ in the template, write ONLY into learn/. Never edit any other template file.
-     The user reviews learn/ and applies the fixes.
+└──▶ in the template, write ONLY into workspace/learn/. Never edit any other template file.
+     The user reviews workspace/learn/ and applies the fixes.
 ```
 
 ## Accounts (IDE and Anti2.0 only)
