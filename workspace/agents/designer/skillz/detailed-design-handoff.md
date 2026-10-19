@@ -2,6 +2,14 @@
 
 Use after discovery in [SKILL.md](SKILL.md). Designer creates its own internal work TODO before design and authors the separate [design TODO](../templates/design-todo.md) for Implementer. Planner owns software construction tasks, file responsibilities, contracts and requirement definitions; Designer owns the visual/interaction specification within that approved scope.
 
+## Establish the shared design-system reference first
+
+Fill the template's dedicated shared Design System section before screen-specific detail. Inspect actual theme/token/font/component sources and identify their baseline/version and approved scope. Inventory the complete active palette with semantic roles, paired light/dark values or exact source expressions and contrast evidence state; no guessed brand values or unmeasured compliance claims. Keep typography roles, spacing/layout scales, effects, used component variants/sizes and their state styles visible together. Motion is specified only when authorized/applicable, including timing, easing, interruption and reduced-motion behavior.
+
+This section exposes the existing canonical definitions; it does not create another theme file or an independently editable copy of the kit. Use exact source sections for complete inherited definitions and label any displayed snapshot read-only/version-bound. A missing required value must be resolved as an approved design/source decision before dependent implementation. Existing kit and frontend token constraints remain authoritative; do not introduce new names, raw component literals or a full unused component library just to complete the inventory.
+
+Assign shared additions the actual task's `DS-n` references when needed. Per-screen layout/type/component/state rows reference the shared definitions and name only explicit approved overrides. Shared state style belongs here; screen-specific messages, flows, API-dependent outcomes and focus transitions remain in the screen interaction matrix. Check every affected screen when a shared definition changes and invalidate affected prior review evidence. Do not let two tables define different defaults for the same component/state.
+
 ## Specify the full surface
 
 Inventory every in-scope route, screen, reusable component and meaningful condition. Link each `DT-n` design item to requirement/AC IDs, relevant software tasks, actual artifacts and canonical API/data constraints. Reference reusable definitions rather than repeating conflicting component measurements across screens.
