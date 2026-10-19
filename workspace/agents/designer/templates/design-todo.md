@@ -9,14 +9,14 @@
 | Designer / task / authorization / Output | `<actual references>` |
 | Planner Output and software TODO versions | `<paths; requirement/AC/software item IDs>` |
 | Existing kit / semantic tokens / guide sections | `<canonical references>` |
-| Design artifacts / input reference matching intent | `<actual paths; match versus inspiration>` |
+| Complete textual specification sources and approved decisions | `<exact sections, requirement/design IDs, source versions and owner decision references>` |
 | Current handoff state / design Tester report | `<DRAFT / AWAITING REVIEW / REWORK / VERIFIED FOR IMPLEMENTATION / BLOCKED; actual report or NOT RUN>` |
 | Orchestrator report disposition / correction evidence | `<actual references or PENDING>` |
 | Design questions / scope or contract proposals | `<blocked IDs or NONE>` |
 
 ## Screen and flow inventory
 
-| Design item ID | Requirement/AC and software item IDs | Route/screen/component and user goal | Entry, action, transition, exit and recovery | Artifact / dependent API/data IDs |
+| Design item ID | Requirement/AC and software item IDs | Route/screen/component and user goal | Entry, action, transition, exit and recovery | Text specification / dependent API/data IDs |
 | --- | --- | --- | --- | --- |
 | `<DT-n>` | `<canonical references>` | `<in-scope target>` | `<observable flow>` | `<actual source/version>` |
 

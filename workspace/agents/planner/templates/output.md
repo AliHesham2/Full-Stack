@@ -45,9 +45,14 @@ Do not label material fully absorbed if a recipient still needs it to make the c
 
 ### API and data proposal
 
-Define each in-scope API once with its ID, method/path, auth/resource access, request fields/validation, success status/body, declared failure statuses/bodies, relevant pagination/filter/idempotency and consumers. Define each data entity/relation once with IDs, fields/types, keys, constraints, ownership, lifecycle and integrity. Record actual existing contracts separately from proposed changes, compatibility/migration needs and unresolved decisions. Include exact request/response examples with synthetic values where required. Use `NOT APPLICABLE` with rationale when the task has no APIs or data; do not invent them.
+Requirements and decision authority remain in this Output. Complete API/DB/SEC implementation definitions must be prepared by Planner through the software TODO using [software-contracts.md](../skillz/software-contracts.md), not left for Implementer to invent. New task-specific definitions live there; existing approved contract/schema/policy sources remain authoritative via exact mandatory attachments. Do not keep competing independently editable definitions here.
 
-`<task-specific definitions and source references; no old PRD required>`
+| API/DB/SEC ID and name | Purpose and requirement/AC IDs | Existing/new/changed and approval state | Exact complete software TODO section or required authoritative attachment/version | Owning module / consumers / unresolved gate |
+| --- | --- | --- | --- | --- |
+| `<actual ID or NOT APPLICABLE with reason>` | `<scope and traceability>` | `<proposal versus approval and source>` | `<complete contract/schema/security definition, not generic folder>` | `<affected tasks and precise blockers>` |
+
+Contract coverage: `<all input locations/field rules, exact success outcomes, unified-error mappings, DB fields/constraints/relationships/diagram, data access/migration and concrete security plan; source versions and missing decisions>`.
+Do not invent APIs or tables for scope that does not require them. Narrative and the final owner explanation derive from these same definitions and must be reconciled on change; examples are not a second contract authority.
 
 ## Shared architectural constraints and incremental outcomes
 
@@ -129,6 +134,7 @@ A missing document type matters only when a needed decision is absent. Security,
 | Requirement/task sources in both directions | `<IDs and the software TODO; actual design items if available>` | `<result>` | `<missing/orphaned items>` |
 | Engineering/security risks surfaced before handoff | `<risk/decision records>` | `<result>` | `<blocked scope>` |
 | Modules, contracts, data and syntax feasibility | `<source/consumer inspection>` | `<result>` | `<gap>` |
+| Complete API success/error, DB schema and dedicated security handoff | `<software TODO readiness gate; API/DB/SEC source versions and per-item evidence>` | `<result>` | `<missing choices block dependent implementation>` |
 | Dependencies, design readiness and file ownership | `<graph and actual design inputs>` | `<result>` | `<conflicts>` |
 | Recipient questions, exact interfaces and task proportion | `<reviewed versions; actual review mode; boundary comparison>` | `<result>` | `<gaps and dispositions>` |
 | Prioritized uncovered failure cases | `<owning task and verification links; reviewed scope>` | `<result>` | `<remaining cases/decisions>` |

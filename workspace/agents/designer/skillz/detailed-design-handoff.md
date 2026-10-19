@@ -24,6 +24,8 @@ Every value or rule needed for implementation must be specified, linked to an ac
 
 ## Review and deliver
 
+Follow [owner-preview.md](owner-preview.md) if a concept image is generated for the owner. Keep the design TODO and implementation-facing Output independent of that image, with no reference to its existence. Owner feedback must become exact written decisions and versioned specification changes; image records/provenance remain in the separate owner-facing record and are not execution inputs.
+
 Self-check requirement coverage, software/API compatibility, guides, kit reuse, internal consistency and complete responsive/state matrices. Inspect actual visual artifacts with available authorized tools; label a text-only specification honestly. Missing source/assets/decisions are explicit gaps, not fabricated examples.
 
 Deliver the versioned design TODO, Output and artifacts to Orchestrator. Under [delivery cycle](../../orchestrator/skillz/delivery-cycle.md), Tester reviews this specification first; Orchestrator independently checks each result. Correct confirmed issues through a formal brief, preserve stable IDs/history and return exact changed sections and new candidate evidence. Orchestrator personally verifies the corrected design and affected scope; no automatic return to Tester. Design-gate success permits the approved handoff, not a claim that a built interface has been tested.

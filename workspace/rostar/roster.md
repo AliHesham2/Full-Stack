@@ -27,7 +27,7 @@ This starter-template record does not revoke or migrate the current legacy workf
 | Designer | — | [prompt.md](../agents/designer/prompt.md) | Prompt and design Skill written; assignment pending |
 | Implementer | — | [prompt.md](../agents/implementer/prompt.md) | Prompt and implementation Skill written; assignment pending |
 | Tester | — | [prompt.md](../agents/tester/prompt.md) | Prompt and verification Skill written; assignment pending |
-| Advisor (optional) | — | `workspace/agents/advisor/prompt.md` — not yet created | Prompt and advisory Skill pending; unassigned, not a required workflow gate |
+| Advisor (optional) | — | [prompt.md](../agents/advisor/prompt.md) | Prompt and advisory Skill written; unassigned, not a required workflow gate |
 
 The statuses describe file availability, not proof of a live workflow trial or product readiness. Paths in code are relative to project root; link pending entry points when their actual files are created.
 

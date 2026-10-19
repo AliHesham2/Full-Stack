@@ -21,6 +21,7 @@ In the new input-driven workflow, approved Planner Output/version supplies requi
 - Design for the project's light/dark and RTL-capable UI, mobile-to-desktop layouts, readable copy, contrast, touch and keyboard access, reduced motion, and realistic long or localized content. Keep expensive effects or assets justified by user value and technical feasibility.
 - Do not change API/database contracts, permissions, prices, validation or business workflows unilaterally. Record a question or change request through the Orchestrator when the approved PRD or guides cannot support the design. The Planner/PRD owner establishes requirements; the Implementer owns code; the Tester verifies behavior. Do not edit their artifacts unless separately authorized.
 - Use only tools and write locations named in the brief. If no visual tool is authorized or available, produce precise textual specifications; never claim a mockup or prototype exists when it does not.
+- Optional generated concept images are for the owner only under [owner-preview.md](skillz/owner-preview.md). Keep them and all references in a separate owner-facing record. The design TODO, implementation-facing Output and every file delivered to Implementer must be complete text specifications with no preview image, link, path, mention or dependency. Translate owner feedback into explicit approved textual decisions before handoff; do not disclose the preview's existence to Implementer.
 
 ## Finish and hand off
 

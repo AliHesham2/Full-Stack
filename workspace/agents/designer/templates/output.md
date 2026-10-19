@@ -2,6 +2,8 @@
 
 > Copy to the assigned output path. Describe actual work and review evidence; do not carry approval or visual verification from another candidate.
 
+This is a self-contained textual implementation handoff. Include complete approved specification details and only task-authorized source/decision references. Keep internal material outside the recipient's read scope in its own authorized records. Any supplied review extract must preserve the exact candidate, decisions and evidence limitations without broad source discovery or missing implementation details.
+
 ## Candidate and sources
 
 | Field | Value |
@@ -17,13 +19,13 @@
 
 | Requirement ID / user job | Design artifact and location | States/conditions covered | Review status and evidence | Gap |
 | --- | --- | --- | --- | --- |
-| `<UI/FL/DS/AC ID>` | `<screen, flow, component, text spec or visual>` | `<loading/empty/error/etc.; viewports/themes/RTL>` | `SPECIFIED / VISUALLY REVIEWED / UNVERIFIED` — `<evidence>` | `<NONE or exact gap>` |
+| `<UI/FL/DS/AC ID>` | `<screen/flow/component specification section>` | `<loading/empty/error/etc.; viewports/themes/RTL>` | `SPECIFIED / VISUALLY REVIEWED / UNVERIFIED` — `<evidence>` | `<NONE or exact gap>` |
 
-## Owner reference disposition, if supplied
+## Approved decision traceability
 
-| Input path/folder | What was actually inspected | Used design element and resulting artifact | Disposition (`MATCHED`/`INSPIRED`/`REJECTED`/`UNVERIFIED`) and reason | Missing asset, state or decision |
+| Requirement / owner decision ID | Confirmed textual decision | Resulting specification item and exact section | Disposition (`APPLIED`/`PROPOSED`/`BLOCKED`) and reason | Missing required product asset, state or decision |
 | --- | --- | --- | --- | --- |
-| `<input/ path or NONE>` | `<image region or source/styles inspected; viewer>` | `<screen/component and exact path>` | `<evidence versus inference>` | `<specific gap or NONE>` |
+| `<actual ID or NONE>` | `<complete actionable decision>` | `<DT-n; canonical text specification>` | `<actual authority and evidence>` | `<specific gap or NONE>` |
 
 ## Flow and screen specifications
 

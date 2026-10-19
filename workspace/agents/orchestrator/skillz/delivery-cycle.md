@@ -38,6 +38,8 @@ Orchestrator opens the Tester report and independently disposes **each finding, 
 
 ## 3. Implementer and the implementation Tester gate
 
+Apply Designer's [owner-preview boundary](../../designer/skillz/owner-preview.md). Any optional concept image is for the owner only, outside the execution package. Pass an explicit allowlist of complete text specifications and implementation-safe review evidence; do not forward private owner records, image links/paths, generation prompts, broad source inventories or any mention that the preview exists. Translate owner decisions into reviewed written requirements/design changes first. The implementation-facing Designer Output is text-only; required production assets remain separately specified actual product inputs.
+
 Implementer receives the current approved software TODO and the actual design TODO/version that passed the design gate. Continue the software TODO as the execution checklist, linking detailed design items rather than copying them into a rival specification. Implementer must read both; conflicts block affected work for resolution. The two documents have distinct owners, not two competing definitions of the same requirement. A missing/mutually inconsistent design, source or decision cannot be ignored because another file says ready.
 
 After Implementer's Output identifies the actual code candidate and developer evidence, Orchestrator sends that candidate, both TODOs and the canonical requirements to Tester for an **IMPLEMENTATION** phase. Tester performs applicable source, quality, behavior, integration, security, accessibility, performance and regression verification within authorization. Its report remains tied to that candidate.

@@ -66,6 +66,8 @@ Use `workspace/agents/designer/skillz/implementation-review.md` (path from proje
 
 ## Resume point
 
+If a concept image is separately authorized for owner discussion, plan its separate owner-facing record under `workspace/agents/designer/skillz/owner-preview.md` (project-root path). Keep this internal planning record and any private source inventory out of the implementation package; the detailed design TODO and implementation-facing Output must be self-contained text with no preview disclosure or dependency.
+
 Update deliverable/case statuses as work progresses: `TODO`, `IN PROGRESS`, `BLOCKED`, `REPORTED`. `REPORTED` means linked evidence has been delivered for review, not accepted. Preserve stable IDs and link earlier candidates instead of overwriting their results.
 
 - Last update / current candidate and phase: `<actual values>`

@@ -64,6 +64,17 @@ Designer creates its internal TODO and detailed design handoff from Orchestrator
 Consequential change, when one occurs: `<CHG-n; trigger/evidence; current/completed/remaining scope; options; required decision; TODO versions to reconcile>`.
 Do not populate fictional changes or architecture decisions. Canonical definitions and actual review results belong in Planner Output; this is the plan for obtaining them.
 
+## Software contract preparation — mandatory when applicable
+
+| Area | Required deliverable in the software TODO or exact mandatory authoritative attachment | Planned validation | State / missing decision owner |
+| --- | --- | --- | --- |
+| APIs | Names/methods/paths, path/query/header/cookie/body field rules, auth, explicit success bodies/headers, applicable shared-error outcomes and examples | Compare every outcome/example with its canonical schema and consumer/AC; separate Next.js and Express boundaries | `<actual state>` |
+| DB | Exact tables/columns/types, keys/constraints/index rationale, relationships/ER diagram, access/transactions/lifecycle and migration/recovery | Compare API-to-DB behavior and actual engine/schema/version; no invented existing DB | `<actual state>` |
+| Security | Separate SEC-linked plan with trust boundaries, concrete controls/enforcement locations, approved policy values and negative verification | Apply relevant guide threat checklist; no vague "make secure" or Implementer-chosen policy | `<actual state>` |
+| Per-item readiness | Every software item links settled definitions/decisions and actual prerequisites | Missing details remain BLOCKED; Orchestrator reviews before dispatch | `<actual state>` |
+
+Follow `workspace/agents/planner/skillz/software-contracts.md` (project-root path). Use justified NOT APPLICABLE without manufacturing infrastructure. Planner resolves requirements/policy with the actual decision owner through Orchestrator; Implementer executes and checks, not completes missing contract/schema/security design.
+
 ## Planned recipient and interface checks
 
 | Check item | Target Output/TODO version | Expected review evidence | Responsible route / status |

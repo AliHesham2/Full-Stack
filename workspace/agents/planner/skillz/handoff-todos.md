@@ -10,6 +10,12 @@ Specify task/requirement/AC IDs, canonical Output/version, explicit [Implementer
 
 Every item links source-backed consumed/produced boundaries, defined names/fields/types/signatures and their canonical versions. Avoid duplicate contract definitions, speculative code, arbitrary tiny tasks or minute quotas. Group coherent work into outcome slices with satisfied prerequisites; justify repeated shared-file churn. Carry negative/failure/authorization cases into planned verification, with Tester owning assigned tests.
 
+## Mandatory software definitions before release to Implementer
+
+Follow [software-contracts.md](software-contracts.md) and fill the software template's dedicated **API contracts**, **Database schema and access plan**, **Security plan** and **Planner contract-readiness gate** sections. Planner specifies the exact software behavior before execution: endpoint names/methods/paths, all input locations and field rules, every intended success output, applicable unified errors, schema/keys/relationships, access/transaction/migration behavior and concrete security enforcement/verification.
+
+Keep one authoritative definition for each API/DB/SEC contract. New task-specific definitions live in the software TODO; existing approved schema/OpenAPI/policy sources remain authoritative through exact versioned mandatory attachments. Output inventories and explains those same definitions. A summary, generic reference, blank field or "Implementer decides" does not satisfy the gate. Planner resolves source/requirement gaps through Orchestrator and the actual decision owner; affected work stays BLOCKED until settled, and Orchestrator reviews the evidence before dispatch.
+
 ## Designer owns the visual implementation TODO
 
 Orchestrator reviews the planning result and briefs Designer from it. Designer creates its own internal TODO and a separate [design TODO for Implementer](../../designer/templates/design-todo.md), with detailed geometry, responsive constraints, typography, states, content, components and accessibility behavior. Planner supplies software constraints and source references, not Designer's screen-level execution checklist or invented visual values.
