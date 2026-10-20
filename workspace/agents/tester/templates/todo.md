@@ -22,6 +22,24 @@
 | --- | --- | --- |
 | `<frontend-guide, backend-guide, syntax, Planner Output, design or contract path>` | `<heading/ID>` | `<changed behavior or file>` |
 
+## Stream applicability and scope
+
+Screen every ID in [verification matrix](../skillz/verification.md). Instantiate actual scoped rows, or group IDs sharing a justified exclusion; do not require an executed test suite for every stream. Missing tooling/access/policy is a blocker for required checks, not an exclusion. Preserve phase distinction: reviewing a specified control does not prove its runtime enforcement.
+
+| Stream ID / affected surface and phase | Applicable risk/requirement, or exclusion reason | Guide/contract/policy version and method | Planned check IDs / required evidence | Decision, access or tool gap / revisit trigger |
+| --- | --- | --- | --- | --- |
+| `<actual ID(s); frontend/backend/document/runtime>` | `<named defect class or justified NOT APPLICABLE>` | `<exact source/section; no invented targets>` | `<check references or exclusion>` | `<precise blocker/owner or NONE>` |
+
+For USABILITY, I18N, PRIVACY and RECOVERY follow [focused checks](../skillz/focused-checks.md). Plan the actual flow/support/locale/data/restore matrix, comparison baseline, expected outcomes and permitted environment; link it here or include it below without a parallel status record. No permission to contact participants, read production PII, restore a backup, send an alert or create infrastructure follows from selecting a stream.
+
+## Security requirement and method selection — when applicable
+
+Use [versioned security baseline](../skillz/security-baseline.md). Pin actual approved sources/assurance scope; reading a standard does not select an ASVS level or change existing policy. Remove only with a justified SECURITY exclusion recorded above.
+
+| Project SEC/AC and affected surface | Actual standard/version, exact requirement ID and source | Selected method/version/section and expected observable outcome | Planned check/environment/permission and limitation |
+| --- | --- | --- | --- |
+| `<actual IDs>` | `<verified version-qualified ASVS ID; project-specific control with reason if no mapping>` | `<actual WSTG version/ID when relevant; no invented crosswalk>` | `<check IDs; document/runtime distinction; precise gaps>` |
+
 ## Imported QA methods, if used
 
 | Skill and pinned source path | Relevant sections/references | Planned use | Omitted or translated guidance and reason |
