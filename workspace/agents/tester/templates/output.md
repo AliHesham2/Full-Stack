@@ -24,17 +24,38 @@ Every approved AC appears exactly once with phase applicability explicit. A docu
 
 ## Verification streams
 
-| Stream | Check IDs | Result (`PASS`/`FAIL`/`BLOCKED`/`NOT RUN`/`NOT APPLICABLE`) | Evidence or reason |
-| --- | --- | --- | --- |
-| Project-guide compliance — frontend | `<IDs>` | `<result>` | `<guide sections and candidate locations>` |
-| Project-guide compliance — backend | `<IDs>` | `<result>` | `<guide sections and candidate locations>` |
-| Technology/syntax compliance | `<IDs>` | `<result>` | `<syntax sections and candidate locations>` |
-| Format/lint/typecheck/build | `<IDs>` | `<result>` | `<commands and outputs>` |
-| Maintainability and duplication | `<IDs>` | `<result>` | `<specific review evidence>` |
-| Functional tests | `<IDs>` | `<result>` | `<test evidence>` |
-| API/contract and cross-app integration | `<IDs>` | `<result>` | `<request/response evidence>` |
-| Security/accessibility/performance/reliability | `<IDs>` | `<result>` | `<measurements or justified exclusions>` |
-| Regression | `<IDs>` | `<result>` | `<baseline and current results>` |
+Use the stable IDs from [verification matrix](../skillz/verification.md). Record each applicable stream separately; shared evidence links are allowed. Keep justified excluded IDs visible, grouping exclusions with one reason when useful rather than fabricating executions. No stream is a new agent or compulsory suite. A failed required check prevents PASS; missing required evidence is BLOCKED/NOT RUN with affected ACs UNVERIFIED. A document PASS is not runtime verification; split scope/phase rows when necessary.
+
+| Stream ID / checked surface | Check IDs | Phase and exact checked scope | Result (`PASS`/`FAIL`/`BLOCKED`/`NOT RUN`/`NOT APPLICABLE`) | Evidence, limitation or exclusion reason |
+| --- | --- | --- | --- | --- |
+| GUIDE / frontend | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| SYNTAX — local reference conformity | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| HEALTH — configured code gates | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| STATIC — analysis and maintainability | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| ARCH — architecture | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| UNIT — isolated behavior | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| LOGIC — business rules | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| INTEGRATION — collaborating parts | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| API — HTTP behavior | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| CONTRACT — consumer compatibility | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| SECURITY — frontend technical controls | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| DATA — frontend DTO and state | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| DEPS — dependencies and supply chain | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| VISUAL — visual accuracy | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| USABILITY — task usability | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| A11Y — accessibility | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| COMPAT — compatibility | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| I18N — localization | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| PERF — frontend performance | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| RELIABILITY — frontend failures and recovery | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| CONCURRENCY — overlapping frontend operations | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| OBS — frontend observability | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| PRIVACY — personal-data handling | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| RECOVERY — frontend artifact and config recovery | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| REGRESSION — existing behavior | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| EXPLORATORY — bounded exploration | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| CHAOS — controlled fault injection | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
+| AI — AI-product behavior | `<IDs or justified exclusion>` | `<document/runtime; actual scope>` | `<actual result>` | `<source/check/evidence or reason>` |
 
 ## Checks executed
 
@@ -60,6 +81,25 @@ Every approved AC appears exactly once with phase applicability explicit. A docu
 | --- | --- | --- | --- | --- |
 | `<T-browser>` | `<build, URL, account/fixture, before/after state>` | `<MCP version, browser, viewport, isolated/profile ID, action sequence>` | `<snapshot, console/network evidence or screenshot path>` | `<untested states or NONE>` |
 | `<T-lighthouse>` | `<build, final audited URL, content state>` | `<Lighthouse/browser versions, device, throttling, environment, run count>` | `<individual reports, values, approved budget, summary and spread>` | `<baseline, field-data or other gap; NONE if resolved>` |
+
+## Focused verification evidence — when applicable
+
+Follow [focused checks](../skillz/focused-checks.md). Use this table as a scoped evidence index; detailed cases may remain in their linked check artifacts. Remove a row only when its ID has a recorded exclusion above. Describe actual observations, not template examples presented as successful checks.
+
+| Stream / check IDs | Actual baseline, case matrix and policy/version | Method, conditions and evidence | Scope/coverage limits and unresolved prerequisite |
+| --- | --- | --- | --- |
+| VISUAL / USABILITY / COMPAT | `<flow/AC/design versions; browser/viewport/theme/content/input and actual device matrix>` | `<comparable renders, heuristic walkthrough or actual authorized user study; distinguish these; expected versus observed>` | `<unobserved states/devices; no invented user measures or visual tolerance>` |
+| I18N | `<approved locale/direction/timezone/currency; boundary inputs and expected formats>` | `<actual render/API results, language/fallback/mixed-text and relevant time/rounding cases>` | `<translation review limits; untested locales; no changed wire contract>` |
+| PRIVACY | `<approved data inventory/policy; synthetic fixture, actor/tenant, allowed frontend surfaces and lifecycle requests>` | `<actual exposure/access/retention/deletion/export observations, time and redacted evidence>` | `<external service/backup enforcement outside scope; technical evidence is not legal sign-off>` |
+| RECOVERY | `<approved frontend recovery plan/build/config artifact and isolated target; no DB/PITR>` | `<actual frontend artifact/config recovery steps/time and startup/adapter checks; isolation/cleanup evidence>` | `<measured versus estimated; frontend artifact recovery versus external service recovery; unavailable dependencies or NOT RUN>` |
+
+## Security requirement coverage — when applicable
+
+Use [security baseline](../skillz/security-baseline.md). Every selected requirement links to actual checks and evidence; no whole-standard claim follows from partial coverage or a clean scan. Keep approved scope and excluded/unverified requirements explicit.
+
+| SEC/AC / exact standard version and requirement ID | Candidate/surface and method, including actual WSTG version/ID when used | Check IDs and actual result/evidence | Untested conditions / policy, environment or assurance limitation |
+| --- | --- | --- | --- |
+| `<actual approved project control and verified source identifier>` | `<document/runtime; exact method and conditions>` | `<linked observed results; no invented mappings>` | `<explicit partial coverage or NONE WITHIN CHECKED SCOPE>` |
 
 ## Findings
 
