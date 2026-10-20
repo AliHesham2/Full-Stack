@@ -54,6 +54,16 @@ Requirements and decision authority remain in this Output. Complete API/DB/SEC i
 Contract coverage: `<all input locations/field rules, exact success outcomes, unified-error mappings, DB fields/constraints/relationships/diagram, data access/migration and concrete security plan; source versions and missing decisions>`.
 Do not invent APIs or tables for scope that does not require them. Narrative and the final owner explanation derive from these same definitions and must be reconciled on change; examples are not a second contract authority.
 
+## Supabase/Postgres planning review — when applicable
+
+Follow [planning adapter](../skillz/supabase-planning.md). This is source/decision traceability, not a duplicate contract/schema or runtime report. Retain actual approved versus proposed state and source conflicts. A reference SQL example is not Implementer syntax authority; unresolved support blocks dependent readiness.
+
+| Selected Skill/rule and exact sections / snapshot version | Actual affected IDs and approved/proposed version/context | Concrete planning consequence, tradeoff or exclusion | Canonical software TODO/API/DB/SEC definition and local syntax support | Verification needed / actual evidence and unresolved gap |
+| --- | --- | --- | --- | --- |
+| `<actual files read or justified NOT APPLICABLE>` | `<RQ/API/DB/SEC/DEC/CHG; no invented live project>` | `<privileges/RLS/query/pool/schema/migration or relevant product concern>` | `<one authoritative definition; exact compatible source or BLOCKED>` | `<assigned future check versus actual returned evidence; no fabricated SQL/measurement>` |
+
+Reconcile relevant source changes and contradictions before recommending implementation. Do not infer a product benchmark, audit, real DB state or provider permission from reading the Skills. The final owner explanation below derives from the same canonical decisions.
+
 ## Shared architectural constraints and incremental outcomes
 
 | Decision ID | Source/authorization and status | Binds: modules/roles/slices | Prevents: incompatible choices or failure | Enforceable rule or exact canonical rule reference | Deferred reason and revisit trigger, if applicable |

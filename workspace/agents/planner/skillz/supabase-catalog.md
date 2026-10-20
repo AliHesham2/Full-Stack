@@ -1,0 +1,54 @@
+# Supabase planning reference catalog
+
+Read [planning adapter](supabase-planning.md) first. This is an inventory of the complete pinned source, not another role or executable syntax authority. Read each selected skill entry and its applicable complete references; summaries do not replace their details.
+
+Source: [Supabase Agent Skills v0.1.9](https://github.com/supabase/agent-skills/releases/tag/v0.1.9), commit `544bfc56c89afe2b87b20017a59b2c6e9502a1fb`. Skill metadata versions differ from the repository release; see [SOURCE.json](references/supabase-agent-skills-upstream/SOURCE.json). License: [MIT, Supabase 2026](references/supabase-agent-skills-upstream/LICENSE). No auto-install or live operations are authorized.
+
+| Local source file | Subject / planning route |
+| --- | --- |
+| [CHANGELOG.md](references/supabase-agent-skills-upstream/CHANGELOG.md) | Changelog |
+| [LICENSE](references/supabase-agent-skills-upstream/LICENSE) | MIT license and attribution; preserve with source |
+| [README.md](references/supabase-agent-skills-upstream/README.md) | Supabase Agent Skills |
+| [assets/og.png](references/supabase-agent-skills-upstream/assets/og.png) | Original README illustration; not product input or design authority |
+| [skills/supabase-postgres-best-practices/CHANGELOG.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/CHANGELOG.md) | Changelog |
+| [skills/supabase-postgres-best-practices/SKILL.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/SKILL.md) | Supabase Postgres Best Practices |
+| [skills/supabase-postgres-best-practices/references/_contributing.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/_contributing.md) | Writing Guidelines for Postgres References; upstream authoring context, not Planner execution instructions |
+| [skills/supabase-postgres-best-practices/references/_sections.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/_sections.md) | Section Definitions |
+| [skills/supabase-postgres-best-practices/references/_template.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/_template.md) | Clear, Action-Oriented Title (e.g., "Use Partial Indexes for Filtered Queries"); upstream authoring context, not Planner execution instructions |
+| [skills/supabase-postgres-best-practices/references/advanced-full-text-search.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md) | Use tsvector for Full-Text Search |
+| [skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md) | Index JSONB Columns for Efficient Querying |
+| [skills/supabase-postgres-best-practices/references/conn-idle-timeout.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md) | Configure Idle Connection Timeouts |
+| [skills/supabase-postgres-best-practices/references/conn-limits.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/conn-limits.md) | Set Appropriate Connection Limits |
+| [skills/supabase-postgres-best-practices/references/conn-pooling.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/conn-pooling.md) | Use Connection Pooling for All Applications |
+| [skills/supabase-postgres-best-practices/references/conn-prepared-statements.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md) | Use Prepared Statements Correctly with Pooling |
+| [skills/supabase-postgres-best-practices/references/data-batch-inserts.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/data-batch-inserts.md) | Batch INSERT Statements for Bulk Data |
+| [skills/supabase-postgres-best-practices/references/data-n-plus-one.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/data-n-plus-one.md) | Eliminate N+1 Queries with Batch Loading |
+| [skills/supabase-postgres-best-practices/references/data-pagination.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/data-pagination.md) | Use Cursor-Based Pagination Instead of OFFSET |
+| [skills/supabase-postgres-best-practices/references/data-upsert.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/data-upsert.md) | Use UPSERT for Insert-or-Update Operations |
+| [skills/supabase-postgres-best-practices/references/lock-advisory.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/lock-advisory.md) | Use Advisory Locks for Application-Level Locking |
+| [skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md) | Prevent Deadlocks with Consistent Lock Ordering |
+| [skills/supabase-postgres-best-practices/references/lock-short-transactions.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/lock-short-transactions.md) | Keep Transactions Short to Reduce Lock Contention |
+| [skills/supabase-postgres-best-practices/references/lock-skip-locked.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/lock-skip-locked.md) | Use SKIP LOCKED for Non-Blocking Queue Processing |
+| [skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md) | Use EXPLAIN ANALYZE to Diagnose Slow Queries |
+| [skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md) | Enable pg_stat_statements for Query Analysis |
+| [skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md) | Maintain Table Statistics with VACUUM and ANALYZE |
+| [skills/supabase-postgres-best-practices/references/query-composite-indexes.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/query-composite-indexes.md) | Create Composite Indexes for Multi-Column Queries |
+| [skills/supabase-postgres-best-practices/references/query-covering-indexes.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/query-covering-indexes.md) | Use Covering Indexes to Avoid Table Lookups |
+| [skills/supabase-postgres-best-practices/references/query-index-types.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/query-index-types.md) | Choose the Right Index Type for Your Data |
+| [skills/supabase-postgres-best-practices/references/query-missing-indexes.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/query-missing-indexes.md) | Add Indexes on WHERE and JOIN Columns |
+| [skills/supabase-postgres-best-practices/references/query-partial-indexes.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/query-partial-indexes.md) | Use Partial Indexes for Filtered Queries |
+| [skills/supabase-postgres-best-practices/references/schema-constraints.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-constraints.md) | Add Constraints Safely in Migrations |
+| [skills/supabase-postgres-best-practices/references/schema-data-types.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-data-types.md) | Choose Appropriate Data Types |
+| [skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md) | Index Foreign Key Columns |
+| [skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md) | Use Lowercase Identifiers for Compatibility |
+| [skills/supabase-postgres-best-practices/references/schema-partitioning.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-partitioning.md) | Partition Large Tables for Better Performance |
+| [skills/supabase-postgres-best-practices/references/schema-primary-keys.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/schema-primary-keys.md) | Select Optimal Primary Key Strategy |
+| [skills/supabase-postgres-best-practices/references/security-privileges.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/security-privileges.md) | Apply Principle of Least Privilege |
+| [skills/supabase-postgres-best-practices/references/security-rls-basics.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/security-rls-basics.md) | Enable Row Level Security for Multi-Tenant Data |
+| [skills/supabase-postgres-best-practices/references/security-rls-performance.md](references/supabase-agent-skills-upstream/skills/supabase-postgres-best-practices/references/security-rls-performance.md) | Optimize RLS Policies for Performance |
+| [skills/supabase/CHANGELOG.md](references/supabase-agent-skills-upstream/skills/supabase/CHANGELOG.md) | Changelog |
+| [skills/supabase/SKILL.md](references/supabase-agent-skills-upstream/skills/supabase/SKILL.md) | Supabase |
+| [skills/supabase/assets/feedback-issue-template.md](references/supabase-agent-skills-upstream/skills/supabase/assets/feedback-issue-template.md) | feedback-issue-template; no issue submission without explicit owner authorization |
+| [skills/supabase/references/skill-feedback.md](references/supabase-agent-skills-upstream/skills/supabase/references/skill-feedback.md) | Skill Feedback; no issue submission without explicit owner authorization |
+
+All 44 selected upstream files are preserved byte-for-byte, including both full SKILL entries and 38 adjacent skill resources. Category routing lives in the adapter; this catalog does not approve an example, benchmark, dependency version or operational command.

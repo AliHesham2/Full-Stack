@@ -35,6 +35,14 @@
 
 The backend guide is mandatory. A map-only read is insufficient; follow the actual startup route in Planner skillz/SKILL.md.
 
+## Supabase/Postgres source selection — when applicable
+
+Use [planning adapter](../skillz/supabase-planning.md) and [complete catalog](../skillz/supabase-catalog.md) before affected decisions. Read full selected files, not these summaries. Unrelated tasks record a scope-based exclusion; no provider setup or DB is implied. Planner plans and reviews, never executes the upstream operations.
+
+| Actual affected product/DB/API/SEC scope | Selected Skill/rule file and sections / pinned source version | Planned consequence, risk or justified exclusion | Approved/proposed actual engine/SDK/driver/workflow and local syntax support | Planned verification owner / environment and blocker |
+| --- | --- | --- | --- | --- |
+| `<actual scope or NOT APPLICABLE with reason>` | `<complete selected entry/rules; do not use a folder alone>` | `<source-backed decision, access/query/index/migration issue>` | `<exact sources/versions or precise gap; no silent upgrade>` | `<allowed/denied, tenant, concurrency, recovery cases as relevant; NOT RUN until actual evidence>` |
+
 ## Planning work
 
 | Item ID | Owner requirement/source | Planned artifact or analysis | Needed guide/syntax/contract sources | Dependencies and decision owners | Planned review evidence | Status |

@@ -36,6 +36,8 @@ Uniform errors do not imply all successes have the same body. Follow the actual 
 
 ## 4. Database schema and access behavior
 
+When Supabase/PostgreSQL scope is affected, complete [Supabase planning review](supabase-planning.md) using the selected full official Skills/rules before marking affected definitions ready. Link findings and local syntax support to the same API/DB/SEC/software items; the imported examples do not authorize code, operational SQL, a provider upgrade or a conflicting architecture.
+
 Read actual [data architecture](../../../docs/backend-guide/05-data/data-architecture.md), relevant access/transaction/concurrency/migration/auth guidance and applicable local syntax sources. Inspect existing schema/version before proposing changes; a starter template is not a deployed database. Provider/engine/version choices must be established or remain questions, never inferred from generic examples.
 
 For each affected entity/table specify its exact schema-qualified name, owning module, purpose, existing/new/changed state and DB ID. Give complete columns: exact type supported by the actual engine/version, nullability, default/generation, PK/FK target, unique/check constraints, enum vocabulary and sensitive/server-owned classification. Include composite keys and constraint names/definitions where relevant. Do not invent database functions or values absent from the approved source/version.
