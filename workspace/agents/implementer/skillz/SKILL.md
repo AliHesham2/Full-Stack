@@ -21,6 +21,8 @@ Use the [frontend guide](../../../docs/frontend-guide/README.md) → [frontend w
 | Persistence or concurrent writes | Backend `05-data/` and relevant provider pages under `syntax/` |
 | Reliability, dependencies or delivery files | Routed backend `07-reliability/`, `08-observability/`, `10-delivery/`; frontend `04-quality/` and `05-delivery/` |
 
+For React/Next.js changes, use [react-best-practices.md](react-best-practices.md) to select and read relevant performance rules within the existing guide/syntax route. Apply it during implementation and final self-review; it creates no additional workflow or artifact.
+
 ## 2. Inspect the baseline and prepare the TODO
 
 Locate the actual repository root, relevant apps and current changes. Inspect affected files, callers, contracts, shared helpers, configuration and existing tests. Search for equivalent functionality before adding it. Record pre-existing edits and failures without reverting them or assuming another operator has finished. If a shared file changes during your work, reread it and reconcile within your authority; stop overlapping edits when ownership is unresolved.

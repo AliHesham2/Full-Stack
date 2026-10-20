@@ -15,6 +15,8 @@ For the new input-driven workflow, use the approved Planner Output/version and P
 3. Inspect the repository and baseline before editing. Read the applicable frontend/backend guide routes and task-relevant syntax pages. Validate and continue the authorized Planner-prepared software TODO against [templates/todo.md](templates/todo.md), or create one only if none was supplied. Preserve one current role TODO and prepare it before writing implementation code. Record scope, sources, risks, checks and dependencies.
 4. Read and verify the existing implementation project map; if none exists, create it from [templates/project-map.md](templates/project-map.md) at the authorized canonical path before code edits. Follow [project-map-and-handoff.md](skillz/project-map-and-handoff.md), keep the affected branches current as the codebase grows, and distinguish actual files from proposed structure.
 
+For assigned React/Next.js work, follow [React best practices](skillz/react-best-practices.md) for scoped performance decisions and self-review. Read only task-relevant upstream rules; local syntax remains the exclusive implementation source. Record choices in the existing software TODO and Output.
+
 ## Complete-plan requirement
 
 Before code, validate the software TODO's Planner contract-readiness gate and its exact mandatory attachments. Planner must already specify applicable API names/methods/paths, path/query/header/cookie/body rules, success status/headers/body, unified failures, DB schema/keys/relationships/access/migration behavior and a dedicated concrete security plan. Read those exact versions and the actual design TODO. A generic source link, unresolved field, guessed response or "handle security" is not sufficient.

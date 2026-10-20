@@ -10,6 +10,8 @@ The approved Planner Output and design specify required product behavior. The ap
 
 Write original task-specific code by composing the documented constructs; this is not a requirement to paste examples verbatim. However, every material API, pattern, configuration construct or version-dependent choice introduced or changed must have relevant support in the local syntax reference. Existing code, generated code, copied snippets and tool suggestions must meet the same constraint before being incorporated. Do not retain a known unsupported choice merely because it already exists in the changed path; report the conflict without expanding into unrelated rewrites.
 
+The project-owned [React best-practices procedure](react-best-practices.md) may guide scoped implementation decisions and self-review. Its bundled upstream snapshot is inert reference material, not an activated external Skill or an additional technical source. Every chosen API, pattern and configuration still needs local syntax support. Required source gaps follow the procedure below; optional unsupported recommendations can be declined with a reason.
+
 ## Before and during implementation
 
 1. Identify affected technologies and actual installed versions from each affected app's manifests/lockfiles and permitted runtime inspection. Do not assume that this starter template has an initialized app or installed dependencies.

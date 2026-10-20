@@ -31,6 +31,8 @@
 
 Use `TODO`, `IN PROGRESS`, `BLOCKED`, `REPORTED`. `REPORTED` means evidence was delivered, not accepted. Source gaps block the dependent item under `workspace/agents/implementer/skillz/syntax-policy.md`.
 
+For React/Next.js items, follow [React best practices](../skillz/react-best-practices.md). In the existing source map/decision notes, record relevant rule IDs and snapshot revision, applicability or declined recommendations, exact local syntax support and observed version/compiler state. No separate checklist is required; unrelated work may state `NOT APPLICABLE` with a reason.
+
 ## Consumed and produced boundaries
 
 | Implementation item | Consumes: interface/artifact ID, version and producer item | Produces: interface/artifact ID and consumer item | Exact names, fields/types/signatures or canonical definition | Compatibility check / missing design or source prerequisite |

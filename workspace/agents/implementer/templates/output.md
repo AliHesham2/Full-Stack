@@ -35,6 +35,8 @@ Preserved pre-existing edits / unrelated observed issues: `<actual observations 
 
 Self-review evidence: `<diff scope; syntax/guide conformity; contract consumers; failure paths; security; duplication; unintended edits>`.
 
+For React/Next.js work, include the [React best-practices review](../skillz/react-best-practices.md) in the self-review above: relevant rule IDs/revision, applied or declined decisions, local syntax support, actual version/compiler evidence and changed locations. Link comparable before/after evidence in Checks for any measured performance claim; otherwise state `NOT MEASURED`. No second report is needed.
+
 ## Checks
 
 | Check ID | Exact command or inspection / working directory | Candidate, environment and time | Exit/result (`PASS` / `FAIL` / `NOT RUN` / `BLOCKED` / `NOT APPLICABLE`) | Retained output/evidence and specific limitation |
